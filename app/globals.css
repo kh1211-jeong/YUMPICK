@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fbf7f2;
+  --surface: #ffffff;
+  --surface-alt: #f4ece3;
+
+  --text: #2b2320;
+  --text-muted: #8a7e75;
+
+  --accent: #e8703a;
+  --accent-hover: #d45f2c;
+  --accent-soft: #fce9de;
+
+  --yum: #f2a93b;
+  --yum-soft: #fdf0d8;
+
+  --positive: #e8703a;
+  --muted-choice: #9aa0a6;
+  --muted-soft: #eef0f1;
+
+  --border: #ebe1d6;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-yum: var(--yum);
+  --color-yum-soft: var(--yum-soft);
+  --color-positive: var(--positive);
+  --color-muted-choice: var(--muted-choice);
+  --color-muted-soft: var(--muted-soft);
+  --color-border: var(--border);
+  --font-sans: "Pretendard", -apple-system, system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Buttons (DESIGN.md 6. 컴포넌트 규칙) ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  transition:
+    transform 150ms ease-out,
+    background-color 150ms ease-out,
+    box-shadow 150ms ease-out;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+.btn-primary:disabled {
+  background: var(--muted-choice);
+  cursor: not-allowed;
+}
+.btn-secondary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* ---- Card ---- */
+.card {
+  background: var(--surface);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(180, 150, 120, 0.1);
+}
+
+/* ---- Input ---- */
+.input-field {
+  height: 52px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0 16px;
+  font-size: 15px;
+  color: var(--text);
+}
+.input-field:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+textarea.input-field {
+  height: auto;
+  padding: 14px 16px;
+  line-height: 1.6;
+}
+
+/* ---- Pill (vote / filter / tag) ---- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  transition:
+    transform 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    color 150ms ease-out;
+}
+.pill-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.pill:active {
+  transform: scale(1.1);
+}
+
+/* ---- Progress ---- */
+.progress-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--muted-soft);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 200ms ease-out;
+}
