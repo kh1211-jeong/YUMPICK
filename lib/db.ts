@@ -303,8 +303,8 @@ export async function getSession(id: string): Promise<SessionRow | null> {
   return sessions.find((s) => s.id === id) ?? null;
 }
 
-// A group has at most one "오늘 점심" session in flight at a time -- everyone
-// who clicks "오늘 점심 시작" should join that one instead of forking a new
+// A group has at most one "오늘 식사" session in flight at a time -- everyone
+// who clicks "오늘 식사 시작" should join that one instead of forking a new
 // session that nobody else's preferences/votes ever reach.
 export async function getActiveSessionForGroup(groupId: string): Promise<SessionRow | null> {
   if (isSupabaseConfigured) {
@@ -373,6 +373,40 @@ export async function closeSessionWithWinner(
     return;
   }
   upsertRow("sessions", { ...session, status: "closed", winner_restaurant: winnerRestaurant });
+}
+
+export type MealHistoryEntry = { restaurant: string; created_at: string };
+
+// Every closed session (across all of the user's groups) that ended in a
+// confirmed restaurant -- powers "최근 선택한 식당" / "자주 가는 식당" on 내 정보.
+export async function getUserMealHistory(userId: string): Promise<MealHistoryEntry[]> {
+  if (isSupabaseConfigured) {
+    const { data: memberships } = await supabase!
+      .from("group_members")
+      .select("group_id")
+      .eq("user_id", userId);
+    const groupIds = (memberships ?? []).map((m: { group_id: string }) => m.group_id);
+    if (groupIds.length === 0) return [];
+    const { data } = await supabase!
+      .from("sessions")
+      .select("winner_restaurant, created_at")
+      .in("group_id", groupIds)
+      .eq("status", "closed")
+      .not("winner_restaurant", "is", null)
+      .order("created_at", { ascending: false });
+    return ((data ?? []) as { winner_restaurant: string; created_at: string }[]).map((s) => ({
+      restaurant: s.winner_restaurant,
+      created_at: s.created_at,
+    }));
+  }
+
+  const groupIds = readTable<GroupMemberRow>("group_members")
+    .filter((m) => m.user_id === userId)
+    .map((m) => m.group_id);
+  return readTable<SessionRow>("sessions")
+    .filter((s) => groupIds.includes(s.group_id) && s.status === "closed" && s.winner_restaurant)
+    .sort((a, b) => b.created_at.localeCompare(a.created_at))
+    .map((s) => ({ restaurant: s.winner_restaurant as string, created_at: s.created_at }));
 }
 
 // ---------- preferences ----------

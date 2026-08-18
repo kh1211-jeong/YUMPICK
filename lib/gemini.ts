@@ -109,7 +109,7 @@ export async function interpretPreference(rawText: string): Promise<ParsedPrefer
 
   try {
     const text = await callGemini(
-      "너는 점심 메뉴 취향 문장을 구조화하는 파서다. 반드시 JSON만 출력하고 설명이나 마크다운을 절대 포함하지 마라. 스키마: { \"like\": string[], \"avoid\": string[], \"budget\": string|null, \"mood\": string|null }",
+      "너는 식사 메뉴 취향 문장을 구조화하는 파서다. 반드시 JSON만 출력하고 설명이나 마크다운을 절대 포함하지 마라. 스키마: { \"like\": string[], \"avoid\": string[], \"budget\": string|null, \"mood\": string|null }",
       rawText
     );
     const parsed = JSON.parse(text) as ParsedPreference;
@@ -156,7 +156,7 @@ export async function rankCandidates(
 
   try {
     const text = await callGemini(
-      `너는 그룹 점심 메뉴 추천 엔진이다. 참가자 전원의 취향(like/avoid/mood/budget)과 후보 식당 목록을 보고, avoid에 걸리는 곳은 제외하고 겹치는 선호를 우선해 최대 ${count}곳의 식당 이름을 가장 적합한 순서로 정렬해라. 반드시 JSON 배열(["식당명1","식당명2",...])만 출력하고 다른 텍스트는 포함하지 마라.`,
+      `너는 그룹 식사 메뉴 추천 엔진이다. 참가자 전원의 취향(like/avoid/mood/budget)과 후보 식당 목록을 보고, avoid에 걸리는 곳은 제외하고 겹치는 선호를 우선해 최대 ${count}곳의 식당 이름을 가장 적합한 순서로 정렬해라. 반드시 JSON 배열(["식당명1","식당명2",...])만 출력하고 다른 텍스트는 포함하지 마라.`,
       JSON.stringify({
         preferences,
         restaurants: restaurants.map((r) => ({ name: r.name, category: r.category, rating: r.rating })),

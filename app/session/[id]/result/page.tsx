@@ -68,7 +68,7 @@ export default function ResultPage({ params }: { params: Promise<{ id: string }>
     const url = window.location.href;
     if (navigator.share) {
       try {
-        await navigator.share({ title: "yumpick", text: `오늘 점심은 ${winner.name}! 🎉`, url });
+        await navigator.share({ title: "yumpick", text: `오늘 식사는 ${winner.name}! 🎉`, url });
         return;
       } catch {
         // user cancelled the share sheet — fall through to clipboard

@@ -122,7 +122,7 @@ export default function GroupDetailPage({
         <>
           <div className="flex-1" />
           <button className="btn btn-primary" onClick={handleStartSession}>
-            {activeSession ? "진행 중인 점심 이어서 참여하기" : "오늘 점심 시작"}
+            {activeSession ? "진행 중인 식사 이어서 참여하기" : "오늘 식사 시작"}
           </button>
         </>
       )}

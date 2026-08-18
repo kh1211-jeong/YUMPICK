@@ -14,6 +14,8 @@ const TYPE_EMOJI: Record<string, string> = {
   couple: "💑",
   team: "👥",
   friends: "🍻",
+  family: "👨‍👩‍👧",
+  company: "🏢",
 };
 
 function typeEmoji(type: string) {
@@ -76,7 +78,7 @@ function GroupsList() {
 
       {isNewMode && !showForm ? (
         <p className="mt-3 rounded-xl bg-accent-soft px-4 py-3 text-sm text-accent">
-          오늘 점심을 시작할 그룹을 골라주세요.
+          오늘 식사를 시작할 그룹을 골라주세요.
         </p>
       ) : null}
 
@@ -134,18 +136,20 @@ function GroupsList() {
               className="input-field"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="점심메이트"
+              placeholder="식사메이트"
               autoFocus
               required
             />
           </label>
           <label className="flex flex-col gap-1.5">
             <span className="text-[13px] font-medium text-text-muted">유형</span>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {[
                 { value: "couple", label: "커플" },
                 { value: "team", label: "팀플" },
                 { value: "friends", label: "친구" },
+                { value: "family", label: "가족" },
+                { value: "company", label: "회사" },
               ].map((opt) => (
                 <button
                   type="button"

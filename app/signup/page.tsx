@@ -119,7 +119,7 @@ function SignupForm() {
         </button>
 
         <p className="text-center text-xs text-text-muted">
-          점심 정할 때만 써요. 전화번호는 공개되지 않아요.
+          식사 정할 때만 써요. 전화번호는 공개되지 않아요.
         </p>
         <Link href={`/login?next=${encodeURIComponent(next)}`} className="text-center text-xs text-accent underline underline-offset-2">
           이미 닉네임이 있으신가요? 로그인

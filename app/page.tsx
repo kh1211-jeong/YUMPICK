@@ -31,7 +31,7 @@ export default function Home() {
         </div>
 
         <h1 className="fade-up-delay-1 text-2xl font-bold tracking-[-0.02em] text-text">
-          오늘 점심, <span className="text-accent">냠</span> 하고 정해요
+          오늘 식사, <span className="text-accent">냠</span> 하고 정해요
         </h1>
         <p className="fade-up-delay-1 max-w-xs text-[15px] leading-relaxed text-text-muted">
           각자 취향 한 줄이면 충분해요. AI가 근처 후보로 좁히고,
@@ -71,7 +71,7 @@ export default function Home() {
               처음이에요, 회원가입
             </Link>
             <p className="text-center text-xs text-text-muted">
-              점심 정할 때만 써요. 전화번호는 공개되지 않아요.
+              식사 정할 때만 써요. 전화번호는 공개되지 않아요.
             </p>
           </>
         )}

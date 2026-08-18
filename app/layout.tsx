@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "yumpick",
-  description: "오늘 점심, 냠 하고 정해요",
+  description: "오늘 식사, 냠 하고 정해요",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
