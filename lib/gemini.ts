@@ -1,7 +1,9 @@
 import type { ParsedPreference, Candidate } from "./types";
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY?.trim();
+// gemini-flash-latest currently returns frequent 503 "high demand" errors on
+// the free tier; the lite alias has more headroom and is plenty for this task.
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-flash-lite-latest";
 
 const AVOID_MARKERS = ["말고", "빼고", "안 ", "싫", "제외"];
 const CATEGORY_KEYWORDS = [
@@ -64,33 +66,52 @@ function ruleBasedInterpret(rawText: string): ParsedPreference {
   return { like, avoid, budget, mood };
 }
 
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function callGemini(systemText: string, userText: string): Promise<string> {
+  const body = JSON.stringify({
+    systemInstruction: { parts: [{ text: systemText }] },
+    contents: [{ parts: [{ text: userText }] }],
+    generationConfig: { responseMimeType: "application/json" },
+  });
+
+  let lastError: unknown;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    if (attempt > 0) await sleep(500);
+    try {
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
+        { method: "POST", headers: { "Content-Type": "application/json" }, body }
+      );
+      if (!res.ok) {
+        // 503 = model temporarily overloaded on Google's side, worth one retry
+        if (res.status === 503 && attempt === 0) {
+          lastError = new Error(`Gemini call failed: ${res.status}`);
+          continue;
+        }
+        throw new Error(`Gemini call failed: ${res.status}`);
+      }
+      const json = await res.json();
+      return json.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+    } catch (err) {
+      lastError = err;
+    }
+  }
+  throw lastError;
+}
+
 export async function interpretPreference(rawText: string): Promise<ParsedPreference> {
   if (!GEMINI_API_KEY || !rawText.trim()) {
     return ruleBasedInterpret(rawText);
   }
 
   try {
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          systemInstruction: {
-            parts: [
-              {
-                text: "너는 점심 메뉴 취향 문장을 구조화하는 파서다. 반드시 JSON만 출력하고 설명이나 마크다운을 절대 포함하지 마라. 스키마: { \"like\": string[], \"avoid\": string[], \"budget\": string|null, \"mood\": string|null }",
-              },
-            ],
-          },
-          contents: [{ parts: [{ text: rawText }] }],
-          generationConfig: { responseMimeType: "application/json" },
-        }),
-      }
+    const text = await callGemini(
+      "너는 점심 메뉴 취향 문장을 구조화하는 파서다. 반드시 JSON만 출력하고 설명이나 마크다운을 절대 포함하지 마라. 스키마: { \"like\": string[], \"avoid\": string[], \"budget\": string|null, \"mood\": string|null }",
+      rawText
     );
-    if (!res.ok) throw new Error(`Gemini interpret failed: ${res.status}`);
-    const json = await res.json();
-    const text = json.candidates?.[0]?.content?.parts?.[0]?.text;
     const parsed = JSON.parse(text) as ParsedPreference;
     return {
       like: parsed.like ?? [],
@@ -127,35 +148,13 @@ export async function rankCandidates(
   if (!GEMINI_API_KEY) return ruleBasedRank(preferences, restaurants);
 
   try {
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          systemInstruction: {
-            parts: [
-              {
-                text: "너는 그룹 점심 메뉴 추천 엔진이다. 참가자 전원의 취향(like/avoid/mood/budget)과 후보 식당 목록을 보고, avoid에 걸리는 곳은 제외하고 겹치는 선호를 우선해 정확히 3곳의 식당 이름을 골라라. 반드시 JSON 배열([\"식당명1\",\"식당명2\",\"식당명3\"])만 출력하고 다른 텍스트는 포함하지 마라.",
-              },
-            ],
-          },
-          contents: [
-            {
-              parts: [
-                {
-                  text: JSON.stringify({ preferences, restaurants: restaurants.map((r) => ({ name: r.name, category: r.category, rating: r.rating })) }),
-                },
-              ],
-            },
-          ],
-          generationConfig: { responseMimeType: "application/json" },
-        }),
-      }
+    const text = await callGemini(
+      "너는 그룹 점심 메뉴 추천 엔진이다. 참가자 전원의 취향(like/avoid/mood/budget)과 후보 식당 목록을 보고, avoid에 걸리는 곳은 제외하고 겹치는 선호를 우선해 정확히 3곳의 식당 이름을 골라라. 반드시 JSON 배열([\"식당명1\",\"식당명2\",\"식당명3\"])만 출력하고 다른 텍스트는 포함하지 마라.",
+      JSON.stringify({
+        preferences,
+        restaurants: restaurants.map((r) => ({ name: r.name, category: r.category, rating: r.rating })),
+      })
     );
-    if (!res.ok) throw new Error(`Gemini rank failed: ${res.status}`);
-    const json = await res.json();
-    const text = json.candidates?.[0]?.content?.parts?.[0]?.text;
     const names = JSON.parse(text) as string[];
     const picked = names
       .map((n) => restaurants.find((r) => r.name === n))
