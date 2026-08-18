@@ -4,7 +4,7 @@ import { GA_ID } from "@/lib/analytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "yumvote",
+  title: "yumpick",
   description: "오늘 점심, 냠 하고 정해요",
 };
 

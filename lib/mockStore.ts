@@ -1,4 +1,4 @@
-const PREFIX = "yumvote:";
+const PREFIX = "yumpick:";
 
 function isBrowser() {
   return typeof window !== "undefined";
