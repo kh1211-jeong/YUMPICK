@@ -43,3 +43,5 @@ next-env.d.ts
 
 # local mock data store (used when Supabase env vars are not set)
 /.data/
+
+.vercel_token
