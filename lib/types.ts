@@ -4,6 +4,7 @@ export type UserRow = {
   birthdate: string;
   phone: string;
   email: string | null;
+  nickname: string | null;
   created_at: string;
 };
 
@@ -23,6 +24,7 @@ export type GroupMemberRow = {
   group_id: string;
   user_id: string;
   joined_at: string;
+  is_favorite: boolean;
 };
 
 export type SessionStatus = "collecting" | "voting" | "closed";
@@ -45,6 +47,7 @@ export type SessionRow = {
   radius_m: number;
   status: SessionStatus;
   candidates: Candidate[] | null;
+  winner_restaurant: string | null;
   created_at: string;
 };
 

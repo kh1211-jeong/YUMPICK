@@ -138,6 +138,38 @@ textarea.input-field {
   transform: scale(1.1);
 }
 
+/* ---- Hero decoration (home screen) ---- */
+.hero-blob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(36px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fade-up 500ms ease-out both;
+}
+.fade-up-delay-1 {
+  animation: fade-up 500ms ease-out 90ms both;
+}
+.fade-up-delay-2 {
+  animation: fade-up 500ms ease-out 180ms both;
+}
+.fade-up-delay-3 {
+  animation: fade-up 500ms ease-out 270ms both;
+}
+
 /* ---- Progress ---- */
 .progress-track {
   height: 6px;

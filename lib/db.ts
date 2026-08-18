@@ -53,14 +53,31 @@ export async function getUserById(id: string): Promise<UserRow | null> {
   return users.find((u) => u.id === id) ?? null;
 }
 
+export async function findUserByNickname(nickname: string): Promise<UserRow | null> {
+  if (isSupabaseConfigured) {
+    const { data } = await supabase!
+      .from("users")
+      .select("*")
+      .eq("nickname", nickname)
+      .maybeSingle();
+    return (data as UserRow) ?? null;
+  }
+  const users = readTable<UserRow>("users");
+  return users.find((u) => u.nickname === nickname) ?? null;
+}
+
 export async function createUser(input: {
   name: string;
   birthdate: string;
   phone: string;
+  nickname: string;
   email?: string | null;
 }): Promise<UserRow> {
   const existing = await findUserByIdentity(input.name, input.birthdate, input.phone);
   if (existing) return existing;
+
+  const nicknameTaken = await findUserByNickname(input.nickname);
+  if (nicknameTaken) throw new Error("NICKNAME_TAKEN");
 
   const row: UserRow = {
     id: uuid(),
@@ -68,6 +85,7 @@ export async function createUser(input: {
     birthdate: input.birthdate,
     phone: input.phone,
     email: input.email ?? null,
+    nickname: input.nickname,
     created_at: nowIso(),
   };
 
@@ -146,24 +164,6 @@ export async function getGroupByInviteToken(token: string): Promise<GroupRow | n
   return groups.find((g) => g.invite_token === token) ?? null;
 }
 
-export async function getUserGroups(userId: string): Promise<GroupRow[]> {
-  if (isSupabaseConfigured) {
-    const { data: memberships } = await supabase!
-      .from("group_members")
-      .select("group_id")
-      .eq("user_id", userId);
-    const groupIds = (memberships ?? []).map((m: { group_id: string }) => m.group_id);
-    if (groupIds.length === 0) return [];
-    const { data } = await supabase!.from("groups").select("*").in("id", groupIds);
-    return (data as GroupRow[]) ?? [];
-  }
-  const memberships = readTable<GroupMemberRow>("group_members").filter(
-    (m) => m.user_id === userId
-  );
-  const groups = readTable<GroupRow>("groups");
-  return groups.filter((g) => memberships.some((m) => m.group_id === g.id));
-}
-
 export async function joinGroup(groupId: string, userId: string): Promise<void> {
   const already = await isGroupMember(groupId, userId);
   if (already) return;
@@ -173,6 +173,7 @@ export async function joinGroup(groupId: string, userId: string): Promise<void> 
     group_id: groupId,
     user_id: userId,
     joined_at: nowIso(),
+    is_favorite: false,
   };
 
   if (isSupabaseConfigured) {
@@ -181,6 +182,57 @@ export async function joinGroup(groupId: string, userId: string): Promise<void> 
     return;
   }
   upsertRow("group_members", row);
+}
+
+export async function getUserGroupsDetailed(
+  userId: string
+): Promise<(GroupRow & { is_favorite: boolean })[]> {
+  if (isSupabaseConfigured) {
+    const { data: memberships } = await supabase!
+      .from("group_members")
+      .select("group_id, is_favorite")
+      .eq("user_id", userId);
+    const rows = (memberships ?? []) as { group_id: string; is_favorite: boolean }[];
+    if (rows.length === 0) return [];
+    const { data } = await supabase!
+      .from("groups")
+      .select("*")
+      .in("id", rows.map((m) => m.group_id));
+    const groups = (data as GroupRow[]) ?? [];
+    return groups.map((g) => ({
+      ...g,
+      is_favorite: rows.find((m) => m.group_id === g.id)?.is_favorite ?? false,
+    }));
+  }
+  const memberships = readTable<GroupMemberRow>("group_members").filter(
+    (m) => m.user_id === userId
+  );
+  const groups = readTable<GroupRow>("groups");
+  return groups
+    .filter((g) => memberships.some((m) => m.group_id === g.id))
+    .map((g) => ({
+      ...g,
+      is_favorite: memberships.find((m) => m.group_id === g.id)?.is_favorite ?? false,
+    }));
+}
+
+export async function setGroupFavorite(
+  groupId: string,
+  userId: string,
+  isFavorite: boolean
+): Promise<void> {
+  if (isSupabaseConfigured) {
+    const { error } = await supabase!
+      .from("group_members")
+      .update({ is_favorite: isFavorite })
+      .eq("group_id", groupId)
+      .eq("user_id", userId);
+    if (error) throw error;
+    return;
+  }
+  const memberships = readTable<GroupMemberRow>("group_members");
+  const row = memberships.find((m) => m.group_id === groupId && m.user_id === userId);
+  if (row) upsertRow("group_members", { ...row, is_favorite: isFavorite });
 }
 
 export async function isGroupMember(groupId: string, userId: string): Promise<boolean> {
@@ -230,6 +282,7 @@ export async function createSession(
     radius_m: 3000,
     status: "collecting",
     candidates: null,
+    winner_restaurant: null,
     created_at: nowIso(),
   };
 
@@ -300,6 +353,26 @@ export async function setSessionStatus(sessionId: string, status: SessionStatus)
     return;
   }
   upsertRow("sessions", { ...session, status });
+}
+
+// Persists the final pick so every viewer (including anyone loading the
+// result page after a random tie-break) sees the same restaurant.
+export async function closeSessionWithWinner(
+  sessionId: string,
+  winnerRestaurant: string
+): Promise<void> {
+  const session = await getSession(sessionId);
+  if (!session) return;
+
+  if (isSupabaseConfigured) {
+    const { error } = await supabase!
+      .from("sessions")
+      .update({ status: "closed", winner_restaurant: winnerRestaurant })
+      .eq("id", sessionId);
+    if (error) throw error;
+    return;
+  }
+  upsertRow("sessions", { ...session, status: "closed", winner_restaurant: winnerRestaurant });
 }
 
 // ---------- preferences ----------

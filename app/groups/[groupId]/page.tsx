@@ -10,8 +10,8 @@ import {
   createSession,
   getActiveSessionForGroup,
 } from "@/lib/db";
-import { getCurrentLocation } from "@/lib/geo";
 import type { GroupRow, UserRow, SessionRow } from "@/lib/types";
+import LocationPicker from "@/components/LocationPicker";
 
 export default function GroupDetailPage({
   params,
@@ -27,6 +27,7 @@ export default function GroupDetailPage({
   const [activeSession, setActiveSession] = useState<SessionRow | null>(null);
   const [copied, setCopied] = useState(false);
   const [starting, setStarting] = useState(false);
+  const [pickingLocation, setPickingLocation] = useState(false);
 
   useEffect(() => {
     getCurrentUser().then(async (u) => {
@@ -60,19 +61,23 @@ export default function GroupDetailPage({
     setTimeout(() => setCopied(false), 1500);
   }
 
-  async function handleStartSession() {
+  function handleStartSession() {
+    if (!group) return;
+    if (activeSession) {
+      router.push(
+        activeSession.status === "voting"
+          ? `/session/${activeSession.id}/vote`
+          : `/session/${activeSession.id}`
+      );
+      return;
+    }
+    setPickingLocation(true);
+  }
+
+  async function handleConfirmLocation(lat: number, lng: number) {
     if (!group) return;
     setStarting(true);
     try {
-      if (activeSession) {
-        router.push(
-          activeSession.status === "voting"
-            ? `/session/${activeSession.id}/vote`
-            : `/session/${activeSession.id}`
-        );
-        return;
-      }
-      const { lat, lng } = await getCurrentLocation();
       const session = await createSession(group.id, lat, lng);
       router.push(`/session/${session.id}`);
     } finally {
@@ -109,11 +114,18 @@ export default function GroupDetailPage({
         {copied ? "복사됐어요!" : "초대 링크 복사"}
       </button>
 
-      <div className="flex-1" />
-
-      <button className="btn btn-primary" onClick={handleStartSession} disabled={starting}>
-        {starting ? "확인 중..." : activeSession ? "진행 중인 점심 이어서 참여하기" : "오늘 점심 시작"}
-      </button>
+      {pickingLocation ? (
+        <div className="mt-6">
+          <LocationPicker onConfirm={handleConfirmLocation} confirming={starting} />
+        </div>
+      ) : (
+        <>
+          <div className="flex-1" />
+          <button className="btn btn-primary" onClick={handleStartSession}>
+            {activeSession ? "진행 중인 점심 이어서 참여하기" : "오늘 점심 시작"}
+          </button>
+        </>
+      )}
     </main>
   );
 }

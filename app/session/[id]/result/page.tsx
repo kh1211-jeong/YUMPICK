@@ -31,6 +31,7 @@ export default function ResultPage({ params }: { params: Promise<{ id: string }>
 
   const [session, setSession] = useState<SessionRow | null | undefined>(undefined);
   const [votes, setVotes] = useState<VoteRow[]>([]);
+  const [shared, setShared] = useState(false);
 
   useEffect(() => {
     getSession(id).then(async (s) => {
@@ -59,7 +60,24 @@ export default function ResultPage({ params }: { params: Promise<{ id: string }>
     );
   }
 
-  const winner = pickWinner(session.candidates, votes);
+  const winner =
+    session.candidates.find((c) => c.name === session.winner_restaurant) ??
+    pickWinner(session.candidates, votes);
+
+  async function handleShare() {
+    const url = window.location.href;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: "yumpick", text: `오늘 점심은 ${winner.name}! 🎉`, url });
+        return;
+      } catch {
+        // user cancelled the share sheet — fall through to clipboard
+      }
+    }
+    await navigator.clipboard.writeText(url);
+    setShared(true);
+    setTimeout(() => setShared(false), 1500);
+  }
 
   return (
     <main className="flex flex-1 flex-col items-center px-5 py-10 text-center">
@@ -93,7 +111,11 @@ export default function ResultPage({ params }: { params: Promise<{ id: string }>
         </a>
       </div>
 
-      <button className="btn btn-primary mt-8 w-full" onClick={() => router.push("/groups")}>
+      <button className="btn btn-secondary mt-8 w-full" onClick={handleShare}>
+        {shared ? "링크 복사됐어요!" : "공유하기"}
+      </button>
+
+      <button className="btn btn-primary mt-3 w-full" onClick={() => router.push("/groups")}>
         내 그룹으로 돌아가기
       </button>
     </main>

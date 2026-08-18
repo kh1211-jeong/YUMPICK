@@ -3,10 +3,12 @@
 import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { getCurrentUser, getUserGroups, createGroup } from "@/lib/db";
+import { getCurrentUser, getUserGroupsDetailed, createGroup, setGroupFavorite } from "@/lib/db";
 import { trackEvent } from "@/lib/analytics";
 import type { GroupRow, UserRow } from "@/lib/types";
 import BottomNav from "@/components/BottomNav";
+
+type GroupWithFavorite = GroupRow & { is_favorite: boolean };
 
 const TYPE_EMOJI: Record<string, string> = {
   couple: "💑",
@@ -24,7 +26,8 @@ function GroupsList() {
   const isNewMode = searchParams.get("new") === "1";
 
   const [user, setUser] = useState<UserRow | null | undefined>(undefined);
-  const [groups, setGroups] = useState<GroupRow[]>([]);
+  const [groups, setGroups] = useState<GroupWithFavorite[]>([]);
+  const [filter, setFilter] = useState<"all" | "favorite">("all");
   const [showForm, setShowForm] = useState(isNewMode);
   const [name, setName] = useState("");
   const [type, setType] = useState("friends");
@@ -37,7 +40,7 @@ function GroupsList() {
         return;
       }
       setUser(u);
-      getUserGroups(u.id).then(setGroups);
+      getUserGroupsDetailed(u.id).then(setGroups);
     });
   }, [router]);
 
@@ -54,7 +57,18 @@ function GroupsList() {
     }
   }
 
+  async function handleToggleFavorite(e: React.MouseEvent, g: GroupWithFavorite) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!user) return;
+    const next = !g.is_favorite;
+    setGroups((prev) => prev.map((x) => (x.id === g.id ? { ...x, is_favorite: next } : x)));
+    await setGroupFavorite(g.id, user.id, next);
+  }
+
   if (user === undefined) return null;
+
+  const visibleGroups = filter === "favorite" ? groups.filter((g) => g.is_favorite) : groups;
 
   return (
     <main className="flex flex-1 flex-col px-5 py-8">
@@ -66,21 +80,47 @@ function GroupsList() {
         </p>
       ) : null}
 
-      <div className="mt-6 flex flex-col gap-3">
-        {groups.length === 0 ? (
+      <div className="mt-4 flex gap-2">
+        <button
+          onClick={() => setFilter("all")}
+          className={`pill ${filter === "all" ? "pill-active" : ""}`}
+        >
+          전체
+        </button>
+        <button
+          onClick={() => setFilter("favorite")}
+          className={`pill ${filter === "favorite" ? "pill-active" : ""}`}
+        >
+          ⭐ 즐겨찾기
+        </button>
+      </div>
+
+      <div className="mt-4 flex flex-col gap-3">
+        {visibleGroups.length === 0 ? (
           <p className="rounded-xl border border-border bg-surface px-4 py-6 text-center text-sm text-text-muted">
-            아직 그룹이 없어요. 첫 그룹을 만들어보세요.
+            {filter === "favorite" ? "즐겨찾기한 그룹이 없어요." : "아직 그룹이 없어요. 첫 그룹을 만들어보세요."}
           </p>
         ) : (
-          groups.map((g) => (
-            <Link key={g.id} href={`/groups/${g.id}`} className="card flex items-center gap-3 px-4 py-4">
+          visibleGroups.map((g) => (
+            <Link
+              key={g.id}
+              href={`/groups/${g.id}`}
+              className="card flex items-center gap-3 px-4 py-4"
+            >
               <span aria-hidden className="text-2xl">
                 {typeEmoji(g.type)}
               </span>
-              <div className="flex flex-col">
+              <div className="flex flex-1 flex-col">
                 <span className="text-[15px] font-semibold text-text">{g.name}</span>
                 <span className="text-xs text-text-muted">{g.type}</span>
               </div>
+              <button
+                onClick={(e) => handleToggleFavorite(e, g)}
+                aria-label="즐겨찾기 토글"
+                className={`text-xl ${g.is_favorite ? "text-yum" : "text-muted-choice"}`}
+              >
+                {g.is_favorite ? "★" : "☆"}
+              </button>
             </Link>
           ))
         )}

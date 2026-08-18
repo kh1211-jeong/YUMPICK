@@ -125,7 +125,11 @@ export async function interpretPreference(rawText: string): Promise<ParsedPrefer
   }
 }
 
-function ruleBasedRank(preferences: ParsedPreference[], restaurants: Candidate[]): Candidate[] {
+function ruleBasedRank(
+  preferences: ParsedPreference[],
+  restaurants: Candidate[],
+  count: number
+): Candidate[] {
   const likeSet = new Set(preferences.flatMap((p) => p.like));
   const avoidSet = new Set(preferences.flatMap((p) => p.avoid));
 
@@ -137,19 +141,22 @@ function ruleBasedRank(preferences: ParsedPreference[], restaurants: Candidate[]
   });
 
   scored.sort((a, b) => b.score - a.score);
-  return scored.slice(0, 3).map((s) => s.r);
+  return scored.slice(0, count).map((s) => s.r);
 }
 
+// Returns up to `count` restaurants, best match first -- the caller shows the
+// first 3 as the primary pick and the rest behind a "더보기" reveal.
 export async function rankCandidates(
   preferences: ParsedPreference[],
-  restaurants: Candidate[]
+  restaurants: Candidate[],
+  count = 10
 ): Promise<Candidate[]> {
-  if (restaurants.length <= 3) return restaurants.slice(0, 3);
-  if (!GEMINI_API_KEY) return ruleBasedRank(preferences, restaurants);
+  if (restaurants.length <= count) return restaurants.slice(0, count);
+  if (!GEMINI_API_KEY) return ruleBasedRank(preferences, restaurants, count);
 
   try {
     const text = await callGemini(
-      "너는 그룹 점심 메뉴 추천 엔진이다. 참가자 전원의 취향(like/avoid/mood/budget)과 후보 식당 목록을 보고, avoid에 걸리는 곳은 제외하고 겹치는 선호를 우선해 정확히 3곳의 식당 이름을 골라라. 반드시 JSON 배열([\"식당명1\",\"식당명2\",\"식당명3\"])만 출력하고 다른 텍스트는 포함하지 마라.",
+      `너는 그룹 점심 메뉴 추천 엔진이다. 참가자 전원의 취향(like/avoid/mood/budget)과 후보 식당 목록을 보고, avoid에 걸리는 곳은 제외하고 겹치는 선호를 우선해 최대 ${count}곳의 식당 이름을 가장 적합한 순서로 정렬해라. 반드시 JSON 배열(["식당명1","식당명2",...])만 출력하고 다른 텍스트는 포함하지 마라.`,
       JSON.stringify({
         preferences,
         restaurants: restaurants.map((r) => ({ name: r.name, category: r.category, rating: r.rating })),
@@ -159,13 +166,13 @@ export async function rankCandidates(
     const picked = names
       .map((n) => restaurants.find((r) => r.name === n))
       .filter((r): r is Candidate => Boolean(r));
-    if (picked.length < 3) {
+    if (picked.length < count) {
       const rest = restaurants.filter((r) => !picked.includes(r));
-      picked.push(...ruleBasedRank(preferences, rest).slice(0, 3 - picked.length));
+      picked.push(...ruleBasedRank(preferences, rest, count - picked.length));
     }
-    return picked.slice(0, 3);
+    return picked.slice(0, count);
   } catch (err) {
     console.error("Gemini rank error, falling back to rule-based ranking:", err);
-    return ruleBasedRank(preferences, restaurants);
+    return ruleBasedRank(preferences, restaurants, count);
   }
 }

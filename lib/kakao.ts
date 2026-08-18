@@ -49,6 +49,47 @@ type KakaoDocument = {
   y: string; // latitude
 };
 
+export type PlaceResult = {
+  name: string;
+  address: string;
+  lat: number;
+  lng: number;
+};
+
+const MOCK_PLACES: PlaceResult[] = [
+  { name: "서울시청", address: "서울 중구 세종대로 110", lat: 37.5665, lng: 126.978 },
+  { name: "강남역", address: "서울 강남구 강남대로 396", lat: 37.4979, lng: 127.0276 },
+  { name: "성균관대학교", address: "서울 종로구 성균관로 25-2", lat: 37.5886, lng: 126.9936 },
+];
+
+// General place/address search (not restricted to restaurants) -- used to let
+// people pick a session's 3km center point by searching instead of only
+// relying on browser geolocation.
+export async function searchPlaces(query: string): Promise<PlaceResult[]> {
+  if (!REST_API_KEY) {
+    return MOCK_PLACES.filter((p) => p.name.includes(query));
+  }
+
+  try {
+    const res = await fetch(
+      `https://dapi.kakao.com/v2/local/search/keyword.json?query=${encodeURIComponent(query)}&size=10`,
+      { headers: { Authorization: `KakaoAK ${REST_API_KEY}` } }
+    );
+    if (!res.ok) throw new Error(`Kakao place search failed: ${res.status}`);
+    const json = await res.json();
+    const documents: KakaoDocument[] = json.documents ?? [];
+    return documents.map((doc) => ({
+      name: doc.place_name,
+      address: doc.address_name,
+      lat: Number(doc.y),
+      lng: Number(doc.x),
+    }));
+  } catch (err) {
+    console.error("Kakao place search error, falling back to mock places:", err);
+    return MOCK_PLACES.filter((p) => p.name.includes(query));
+  }
+}
+
 export async function searchRestaurants(
   lat: number,
   lng: number,
