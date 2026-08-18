@@ -250,6 +250,27 @@ export async function getSession(id: string): Promise<SessionRow | null> {
   return sessions.find((s) => s.id === id) ?? null;
 }
 
+// A group has at most one "오늘 점심" session in flight at a time -- everyone
+// who clicks "오늘 점심 시작" should join that one instead of forking a new
+// session that nobody else's preferences/votes ever reach.
+export async function getActiveSessionForGroup(groupId: string): Promise<SessionRow | null> {
+  if (isSupabaseConfigured) {
+    const { data } = await supabase!
+      .from("sessions")
+      .select("*")
+      .eq("group_id", groupId)
+      .in("status", ["collecting", "voting"])
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    return (data as SessionRow) ?? null;
+  }
+  const sessions = readTable<SessionRow>("sessions")
+    .filter((s) => s.group_id === groupId && (s.status === "collecting" || s.status === "voting"))
+    .sort((a, b) => b.created_at.localeCompare(a.created_at));
+  return sessions[0] ?? null;
+}
+
 export async function setSessionCandidates(
   sessionId: string,
   candidates: Candidate[]

@@ -8,9 +8,10 @@ import {
   getGroupMembers,
   isGroupMember,
   createSession,
+  getActiveSessionForGroup,
 } from "@/lib/db";
 import { getCurrentLocation } from "@/lib/geo";
-import type { GroupRow, UserRow } from "@/lib/types";
+import type { GroupRow, UserRow, SessionRow } from "@/lib/types";
 
 export default function GroupDetailPage({
   params,
@@ -23,6 +24,7 @@ export default function GroupDetailPage({
   const [user, setUser] = useState<UserRow | null | undefined>(undefined);
   const [group, setGroup] = useState<GroupRow | null | undefined>(undefined);
   const [members, setMembers] = useState<UserRow[]>([]);
+  const [activeSession, setActiveSession] = useState<SessionRow | null>(null);
   const [copied, setCopied] = useState(false);
   const [starting, setStarting] = useState(false);
 
@@ -46,6 +48,7 @@ export default function GroupDetailPage({
       }
       setGroup(g);
       setMembers(await getGroupMembers(groupId));
+      setActiveSession(await getActiveSessionForGroup(groupId));
     });
   }, [groupId, router]);
 
@@ -61,6 +64,14 @@ export default function GroupDetailPage({
     if (!group) return;
     setStarting(true);
     try {
+      if (activeSession) {
+        router.push(
+          activeSession.status === "voting"
+            ? `/session/${activeSession.id}/vote`
+            : `/session/${activeSession.id}`
+        );
+        return;
+      }
       const { lat, lng } = await getCurrentLocation();
       const session = await createSession(group.id, lat, lng);
       router.push(`/session/${session.id}`);
@@ -101,7 +112,7 @@ export default function GroupDetailPage({
       <div className="flex-1" />
 
       <button className="btn btn-primary" onClick={handleStartSession} disabled={starting}>
-        {starting ? "위치 확인 중..." : "오늘 점심 시작"}
+        {starting ? "확인 중..." : activeSession ? "진행 중인 점심 이어서 참여하기" : "오늘 점심 시작"}
       </button>
     </main>
   );
