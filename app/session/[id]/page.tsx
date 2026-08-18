@@ -12,6 +12,7 @@ import {
 } from "@/lib/db";
 import { trackEvent } from "@/lib/analytics";
 import type { SessionRow, UserRow, PreferenceRow } from "@/lib/types";
+import KakaoMap from "@/components/KakaoMap";
 
 export default function SessionPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = usePromise(params);
@@ -140,12 +141,16 @@ export default function SessionPage({ params }: { params: Promise<{ id: string }
     <main className="flex flex-1 flex-col px-5 py-8">
       <h1 className="text-2xl font-bold tracking-[-0.02em] text-text">오늘 뭐 땡겨요?</h1>
 
-      <div className="card mt-4 flex flex-col gap-1 p-4">
-        <span className="text-[13px] font-medium text-text-muted">위치 기준</span>
-        <span className="text-[15px] text-text">
-          {session.center_lat.toFixed(4)}, {session.center_lng.toFixed(4)} 근처{" "}
-          {(session.radius_m / 1000).toFixed(0)}km 이내
+      <div className="card mt-4 flex flex-col gap-2 p-4">
+        <span className="text-[13px] font-medium text-text-muted">
+          이 위치 기준 {(session.radius_m / 1000).toFixed(0)}km 이내
         </span>
+        <KakaoMap
+          lat={session.center_lat}
+          lng={session.center_lng}
+          radiusM={session.radius_m}
+          className="h-40 w-full"
+        />
       </div>
 
       <div className="mt-4 flex items-center gap-2">

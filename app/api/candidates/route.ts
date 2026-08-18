@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { searchRestaurants } from "@/lib/naver";
+import { searchRestaurants } from "@/lib/kakao";
 import { rankCandidates } from "@/lib/gemini";
 import type { ParsedPreference } from "@/lib/types";
 

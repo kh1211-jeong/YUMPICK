@@ -79,8 +79,8 @@ DB/백엔드  : Supabase (@supabase/supabase-js) — 계정·그룹·세션·투
 AI (자연어): Google Gemini API (무료 티어, aistudio.google.com에서 키 발급)
              * OpenAI는 무료 API 없음 → Gemini Flash로 프롬프트 해석.
              * OpenAI 호환 형식이라 추후 교체 용이.
-식당 검색  : 네이버 검색 API (지역/Local) — 서버 사이드에서만 호출
-지도/좌표  : 네이버 지도 API (Web Dynamic Map, Geocoding)
+식당 검색  : 카카오 로컬 API (카테고리 검색 FD6) — 서버 사이드에서만 호출
+지도/좌표  : 카카오맵 JavaScript SDK
 거리 계산  : 하버사인 공식 직접 구현 (lib/distance.ts) — 3km 반경 필터
 측정       : Google Analytics 4 (GA4)
 배포       : Vercel
@@ -103,13 +103,14 @@ yumvote/
 │  ├─ session/[id]/result/page.tsx  # 확정 결과 + 지도
 │  └─ api/
 │     ├─ interpret/route.ts         # Gemini 호출: 프롬프트 → 구조화 (키 숨김)
-│     ├─ search/route.ts            # 네이버 검색 API 호출 (키 숨김)
+│     ├─ search/route.ts            # 카카오 로컬 API 호출 (키 숨김)
 │     ├─ candidates/route.ts        # 전원 취향 종합 → 후보 3곳 선정
 │     └─ vote/route.ts              # 투표 저장/집계
 ├─ lib/
 │  ├─ supabase.ts
 │  ├─ distance.ts                   # 하버사인 3km 필터
 │  ├─ gemini.ts                     # Gemini 클라이언트 래퍼
+│  ├─ kakao.ts                      # 카카오 로컬 API 래퍼
 │  └─ analytics.ts                  # GA 이벤트 헬퍼
 ├─ DESIGN.md
 ├─ CLAUDE.md
@@ -199,20 +200,19 @@ result_confirm      최종 메뉴 확정될 때
 ## 9. 보안 규칙 (엄수)
 
 - API 키 하드코딩 금지. 전부 환경변수.
-- **서버 사이드에서만** 쓸 키(브라우저 노출 금지): Gemini 키, 네이버 검색 Secret.
+- **서버 사이드에서만** 쓸 키(브라우저 노출 금지): Gemini 키, 카카오 REST API 키.
   → 반드시 `app/api/*/route.ts` 안에서만 사용.
-- `NEXT_PUBLIC_` 접두사는 노출돼도 되는 값에만 (지도 Client ID, Supabase anon key, GA ID).
+- `NEXT_PUBLIC_` 접두사는 노출돼도 되는 값에만 (카카오맵 JavaScript 키, Supabase anon key, GA ID).
 - 전화번호 등 개인정보는 최소 수집·표시. 화면엔 이름만 노출, 전화번호는 인증 용도로만.
 - `.env.local` 은 `.gitignore` 에 포함. 배포 값은 Vercel 환경변수로.
 
 환경변수:
 ```
-NEXT_PUBLIC_NAVER_MAP_CLIENT_ID
+NEXT_PUBLIC_KAKAO_JS_KEY
 NEXT_PUBLIC_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY
 NEXT_PUBLIC_GA_ID
-NAVER_SEARCH_CLIENT_ID        # 서버 전용
-NAVER_SEARCH_CLIENT_SECRET    # 서버 전용
+KAKAO_REST_API_KEY            # 서버 전용
 GEMINI_API_KEY                # 서버 전용
 ```
 
@@ -222,7 +222,7 @@ GEMINI_API_KEY                # 서버 전용
 
 - 용도 1 — **프롬프트 해석**: 참여자 문장 → `{ like:[카테고리], avoid:[요소], budget, mood }` JSON.
   - 반드시 "JSON만 출력, 설명·마크다운 금지" 시스템 지시. 응답 파싱 실패 대비 try-catch.
-- 용도 2 — **후보 선정 보조**: 네이버 검색으로 받은 식당 목록 + 전원 취향을 종합해 3곳 랭킹.
+- 용도 2 — **후보 선정 보조**: 카카오 로컬 API로 받은 식당 목록 + 전원 취향을 종합해 3곳 랭킹.
   - 회피 요소(매운거 등) 걸린 곳은 제외. 겹치는 선호를 우선.
 - 무료 티어 rate limit 있음 → 호출 최소화(세션당 해석 배치 1회 + 후보 선정 1회).
 

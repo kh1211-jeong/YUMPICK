@@ -1,13 +1,9 @@
 import type { Candidate } from "./types";
 import { haversineDistanceM } from "./distance";
 
-const CLIENT_ID = process.env.NAVER_SEARCH_CLIENT_ID;
-const CLIENT_SECRET = process.env.NAVER_SEARCH_CLIENT_SECRET;
+const REST_API_KEY = process.env.KAKAO_REST_API_KEY;
 
-function stripTags(html: string): string {
-  return html.replace(/<[^>]+>/g, "");
-}
-
+// Kakao Local API doesn't return star ratings, so this stands in for one.
 function pseudoRating(seed: string): number {
   let hash = 0;
   for (let i = 0; i < seed.length; i++) hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
@@ -35,61 +31,56 @@ function mockRestaurants(lat: number, lng: number, radiusM: number): Candidate[]
       name: t.name,
       category: t.category,
       rating: pseudoRating(t.name),
-      url: `https://map.naver.com/v5/search/${encodeURIComponent(t.name)}`,
-      address: "목업 주소 (네이버 키 연동 전)",
+      url: `https://map.kakao.com/link/search/${encodeURIComponent(t.name)}`,
+      address: "목업 주소 (카카오 키 연동 전)",
       lat: rLat,
       lng: rLng,
     };
   }).filter((r) => haversineDistanceM(lat, lng, r.lat, r.lng) <= radiusM);
 }
 
+type KakaoDocument = {
+  place_name: string;
+  category_name: string;
+  category_group_name: string;
+  address_name: string;
+  place_url: string;
+  x: string; // longitude
+  y: string; // latitude
+};
+
 export async function searchRestaurants(
   lat: number,
   lng: number,
-  radiusM: number,
-  query = "맛집"
+  radiusM: number
 ): Promise<Candidate[]> {
-  if (!CLIENT_ID || !CLIENT_SECRET) {
+  if (!REST_API_KEY) {
     return mockRestaurants(lat, lng, radiusM);
   }
 
   try {
     const res = await fetch(
-      `https://openapi.naver.com/v1/search/local.json?query=${encodeURIComponent(query)}&display=20&sort=comment`,
-      {
-        headers: {
-          "X-Naver-Client-Id": CLIENT_ID,
-          "X-Naver-Client-Secret": CLIENT_SECRET,
-        },
-      }
+      `https://dapi.kakao.com/v2/local/search/category.json?category_group_code=FD6&x=${lng}&y=${lat}&radius=${Math.min(radiusM, 20000)}&size=15&sort=distance`,
+      { headers: { Authorization: `KakaoAK ${REST_API_KEY}` } }
     );
-    if (!res.ok) throw new Error(`Naver search failed: ${res.status}`);
+    if (!res.ok) throw new Error(`Kakao local search failed: ${res.status}`);
     const json = await res.json();
-    const items: Array<{
-      title: string;
-      category: string;
-      address: string;
-      link: string;
-      mapx: string;
-      mapy: string;
-    }> = json.items ?? [];
+    const documents: KakaoDocument[] = json.documents ?? [];
 
-    return items
-      .map((item) => {
-        const name = stripTags(item.title);
-        return {
-          name,
-          category: item.category || "기타",
-          rating: pseudoRating(name),
-          url: item.link || `https://map.naver.com/v5/search/${encodeURIComponent(name)}`,
-          address: item.address,
-          lat: Number(item.mapy) / 10000000,
-          lng: Number(item.mapx) / 10000000,
-        };
-      })
-      .filter((r) => haversineDistanceM(lat, lng, r.lat, r.lng) <= radiusM);
+    return documents.map((doc) => {
+      const category = doc.category_name.split(">").pop()?.trim() || doc.category_group_name || "음식점";
+      return {
+        name: doc.place_name,
+        category,
+        rating: pseudoRating(doc.place_name),
+        url: doc.place_url,
+        address: doc.address_name,
+        lat: Number(doc.y),
+        lng: Number(doc.x),
+      };
+    });
   } catch (err) {
-    console.error("Naver search error, falling back to mock restaurants:", err);
+    console.error("Kakao local search error, falling back to mock restaurants:", err);
     return mockRestaurants(lat, lng, radiusM);
   }
 }

@@ -6,6 +6,7 @@ import { getSession } from "@/lib/db";
 import { trackEvent } from "@/lib/analytics";
 import type { SessionRow, Candidate, VoteRow } from "@/lib/types";
 import StarRating from "@/components/StarRating";
+import KakaoMap from "@/components/KakaoMap";
 
 function pickWinner(candidates: Candidate[], votes: VoteRow[]): Candidate {
   const tally = new Map<string, number>();
@@ -78,18 +79,17 @@ export default function ResultPage({ params }: { params: Promise<{ id: string }>
         </a>
       </div>
 
-      <div className="card mt-4 flex w-full flex-col items-start gap-1 p-4">
+      <div className="card mt-4 flex w-full flex-col items-start gap-2 p-4">
         <span className="text-[13px] font-medium text-text-muted">위치</span>
-        <span className="text-sm text-text">
-          {winner.lat.toFixed(4)}, {winner.lng.toFixed(4)}
-        </span>
+        <span className="text-sm text-text">{winner.address}</span>
+        <KakaoMap lat={winner.lat} lng={winner.lng} className="mt-1 h-40 w-full" />
         <a
-          href={`https://map.naver.com/v5/search/${encodeURIComponent(winner.name)}`}
+          href={winner.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-2 flex h-32 w-full items-center justify-center rounded-2xl bg-yum-soft text-sm text-text-muted"
+          className="mt-1 text-xs text-accent underline underline-offset-2"
         >
-          네이버 지도에서 열기
+          카카오맵에서 열기
         </a>
       </div>
 

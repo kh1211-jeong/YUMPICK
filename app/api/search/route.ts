@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { searchRestaurants } from "@/lib/naver";
+import { searchRestaurants } from "@/lib/kakao";
 
 export async function GET(request: NextRequest) {
   const lat = Number(request.nextUrl.searchParams.get("lat"));
