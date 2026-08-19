@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState, use as usePromise } from "react";
+import { useCallback, useEffect, useRef, useState, use as usePromise } from "react";
 import { useRouter } from "next/navigation";
 import { getCurrentUser, getSession, getGroup, getGroupMembers, closeSessionWithWinner } from "@/lib/db";
 import { trackEvent } from "@/lib/analytics";
@@ -21,17 +21,30 @@ export default function VotePage({ params }: { params: Promise<{ id: string }> }
   const [closing, setClosing] = useState(false);
   const [tieBreakCandidates, setTieBreakCandidates] = useState<Candidate[] | null>(null);
   const [showMore, setShowMore] = useState(false);
+  // Guards against an in-flight poll response landing *after* a newer one
+  // (e.g. right after casting a vote) and clobbering fresher state with stale data.
+  const refreshSeq = useRef(0);
 
-  const refresh = useCallback(async () => {
-    const s = await getSession(id);
-    setSession(s);
-    if (!s) return;
-    const [g, members] = await Promise.all([getGroup(s.group_id), getGroupMembers(s.group_id)]);
-    setGroup(g);
-    setMemberCount(members.length);
+  async function fetchVotes(): Promise<VoteRow[]> {
     const res = await fetch(`/api/vote?sessionId=${id}`);
     const json = await res.json();
-    setVotes(json.votes ?? []);
+    return json.votes ?? [];
+  }
+
+  const refresh = useCallback(async () => {
+    const seq = ++refreshSeq.current;
+    const s = await getSession(id);
+    const [g, members, latestVotes] = await Promise.all([
+      s ? getGroup(s.group_id) : null,
+      s ? getGroupMembers(s.group_id) : [],
+      fetchVotes(),
+    ]);
+    if (seq !== refreshSeq.current) return; // a newer refresh already landed
+    setSession(s);
+    if (!s) return;
+    setGroup(g);
+    setMemberCount(members.length);
+    setVotes(latestVotes);
   }, [id]);
 
   useEffect(() => {
@@ -66,6 +79,7 @@ export default function VotePage({ params }: { params: Promise<{ id: string }> }
         body: JSON.stringify({ sessionId: id, userId: user.id, restaurant }),
       });
       const json = await res.json();
+      refreshSeq.current++; // invalidate any older in-flight poll so it can't clobber this
       setVotes(json.votes ?? []);
       trackEvent("vote_click", { session_id: id, restaurant });
     } finally {
@@ -80,8 +94,11 @@ export default function VotePage({ params }: { params: Promise<{ id: string }> }
     }
     setClosing(true);
     try {
+      // Always use freshly-fetched votes here (not the polled state) so a
+      // just-cast vote can never be missed by a stale in-flight poll response.
+      const latestVotes = await fetchVotes();
       const tally = new Map<string, number>();
-      for (const v of votes) tally.set(v.restaurant, (tally.get(v.restaurant) ?? 0) + 1);
+      for (const v of latestVotes) tally.set(v.restaurant, (tally.get(v.restaurant) ?? 0) + 1);
       const maxVotes = Math.max(...session.candidates.map((c) => tally.get(c.name) ?? 0));
       const tied = session.candidates.filter((c) => (tally.get(c.name) ?? 0) === maxVotes);
 
