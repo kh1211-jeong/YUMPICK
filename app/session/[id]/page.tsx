@@ -33,13 +33,18 @@ export default function SessionPage({ params }: { params: Promise<{ id: string }
 
   const refresh = useCallback(async () => {
     const s = await getSession(id);
-    setSession(s);
-    if (!s) return;
+    if (!s) {
+      setSession(null);
+      return;
+    }
     const [g, members, prefs] = await Promise.all([
       getGroup(s.group_id),
       getGroupMembers(s.group_id),
       getPreferences(id),
     ]);
+    // Set together so the location card and its "위치 변경" control (which
+    // depends on `group`) never render a frame apart from each other.
+    setSession(s);
     setGroup(g);
     setMemberCount(members.length);
     setPreferences(prefs);
