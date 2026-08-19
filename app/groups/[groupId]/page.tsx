@@ -9,8 +9,9 @@ import {
   isGroupMember,
   createSession,
   getActiveSessionForGroup,
+  setGroupLocationPolicy,
 } from "@/lib/db";
-import type { GroupRow, UserRow, SessionRow } from "@/lib/types";
+import type { GroupRow, UserRow, SessionRow, LocationPolicy } from "@/lib/types";
 import LocationPicker from "@/components/LocationPicker";
 
 export default function GroupDetailPage({
@@ -62,7 +63,7 @@ export default function GroupDetailPage({
   }
 
   function handleStartSession() {
-    if (!group) return;
+    if (!group || !user) return;
     if (activeSession) {
       router.push(
         activeSession.status === "voting"
@@ -85,6 +86,12 @@ export default function GroupDetailPage({
     }
   }
 
+  async function handleChangePolicy(policy: LocationPolicy) {
+    if (!group) return;
+    setGroup({ ...group, location_policy: policy });
+    await setGroupLocationPolicy(group.id, policy);
+  }
+
   if (user === undefined || group === undefined) return null;
   if (group === null) {
     return (
@@ -93,6 +100,10 @@ export default function GroupDetailPage({
       </main>
     );
   }
+
+  const isOwner = user?.id === group.owner_id;
+  const locationPolicy = group.location_policy ?? "anyone";
+  const canStartNewSession = isOwner || locationPolicy === "anyone";
 
   return (
     <main className="flex flex-1 flex-col px-5 py-8">
@@ -114,6 +125,26 @@ export default function GroupDetailPage({
         {copied ? "복사됐어요!" : "초대 링크 복사"}
       </button>
 
+      {isOwner ? (
+        <div className="card mt-4 flex flex-col gap-2 p-4">
+          <span className="text-[13px] font-medium text-text-muted">위치 설정 권한</span>
+          <div className="flex gap-2">
+            <button
+              onClick={() => handleChangePolicy("anyone")}
+              className={`pill ${locationPolicy === "anyone" ? "pill-active" : ""}`}
+            >
+              그룹원 누구나
+            </button>
+            <button
+              onClick={() => handleChangePolicy("leader_only")}
+              className={`pill ${locationPolicy === "leader_only" ? "pill-active" : ""}`}
+            >
+              그룹장만
+            </button>
+          </div>
+        </div>
+      ) : null}
+
       {pickingLocation ? (
         <div className="mt-6">
           <LocationPicker onConfirm={handleConfirmLocation} confirming={starting} />
@@ -121,7 +152,16 @@ export default function GroupDetailPage({
       ) : (
         <>
           <div className="flex-1" />
-          <button className="btn btn-primary" onClick={handleStartSession}>
+          {!activeSession && !canStartNewSession ? (
+            <p className="mb-3 text-center text-xs text-text-muted">
+              이 그룹은 그룹장만 위치를 정할 수 있어요. 그룹장에게 시작을 요청해주세요.
+            </p>
+          ) : null}
+          <button
+            className="btn btn-primary"
+            onClick={handleStartSession}
+            disabled={!activeSession && !canStartNewSession}
+          >
             {activeSession ? "진행 중인 식사 이어서 참여하기" : "오늘 식사 시작"}
           </button>
         </>

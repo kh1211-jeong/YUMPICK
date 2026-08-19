@@ -9,6 +9,7 @@ import type {
   PreferenceRow,
   ParsedPreference,
   Candidate,
+  LocationPolicy,
 } from "./types";
 
 function nowIso() {
@@ -128,6 +129,7 @@ export async function createGroup(input: {
     type: input.type,
     owner_id: input.ownerId,
     invite_token: inviteToken(),
+    location_policy: "anyone",
     created_at: nowIso(),
   };
 
@@ -140,6 +142,22 @@ export async function createGroup(input: {
   upsertRow("groups", row);
   await joinGroup(row.id, input.ownerId);
   return row;
+}
+
+export async function setGroupLocationPolicy(
+  groupId: string,
+  policy: LocationPolicy
+): Promise<void> {
+  if (isSupabaseConfigured) {
+    const { error } = await supabase!
+      .from("groups")
+      .update({ location_policy: policy })
+      .eq("id", groupId);
+    if (error) throw error;
+    return;
+  }
+  const group = readTable<GroupRow>("groups").find((g) => g.id === groupId);
+  if (group) upsertRow("groups", { ...group, location_policy: policy });
 }
 
 export async function getGroup(id: string): Promise<GroupRow | null> {
@@ -301,6 +319,28 @@ export async function getSession(id: string): Promise<SessionRow | null> {
   }
   const sessions = readTable<SessionRow>("sessions");
   return sessions.find((s) => s.id === id) ?? null;
+}
+
+// Only valid while still collecting preferences -- once candidates exist the
+// list was generated for the old center point, so changing it afterward
+// would silently desync the shown restaurants from the actual search origin.
+export async function updateSessionLocation(
+  sessionId: string,
+  centerLat: number,
+  centerLng: number
+): Promise<void> {
+  const session = await getSession(sessionId);
+  if (!session || session.status !== "collecting") return;
+
+  if (isSupabaseConfigured) {
+    const { error } = await supabase!
+      .from("sessions")
+      .update({ center_lat: centerLat, center_lng: centerLng })
+      .eq("id", sessionId);
+    if (error) throw error;
+    return;
+  }
+  upsertRow("sessions", { ...session, center_lat: centerLat, center_lng: centerLng });
 }
 
 // A group has at most one "오늘 식사" session in flight at a time -- everyone

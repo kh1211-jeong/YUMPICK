@@ -2,9 +2,9 @@
 
 import { useCallback, useEffect, useState, use as usePromise } from "react";
 import { useRouter } from "next/navigation";
-import { getCurrentUser, getSession, getGroupMembers, closeSessionWithWinner } from "@/lib/db";
+import { getCurrentUser, getSession, getGroup, getGroupMembers, closeSessionWithWinner } from "@/lib/db";
 import { trackEvent } from "@/lib/analytics";
-import type { SessionRow, UserRow, VoteRow, Candidate } from "@/lib/types";
+import type { SessionRow, UserRow, VoteRow, Candidate, GroupRow } from "@/lib/types";
 import StarRating from "@/components/StarRating";
 import TieBreakRoulette from "@/components/TieBreakRoulette";
 
@@ -14,6 +14,7 @@ export default function VotePage({ params }: { params: Promise<{ id: string }> }
 
   const [user, setUser] = useState<UserRow | null | undefined>(undefined);
   const [session, setSession] = useState<SessionRow | null | undefined>(undefined);
+  const [group, setGroup] = useState<GroupRow | null>(null);
   const [memberCount, setMemberCount] = useState(0);
   const [votes, setVotes] = useState<VoteRow[]>([]);
   const [voting, setVoting] = useState<string | null>(null);
@@ -25,7 +26,8 @@ export default function VotePage({ params }: { params: Promise<{ id: string }> }
     const s = await getSession(id);
     setSession(s);
     if (!s) return;
-    const members = await getGroupMembers(s.group_id);
+    const [g, members] = await Promise.all([getGroup(s.group_id), getGroupMembers(s.group_id)]);
+    setGroup(g);
     setMemberCount(members.length);
     const res = await fetch(`/api/vote?sessionId=${id}`);
     const json = await res.json();
@@ -71,8 +73,11 @@ export default function VotePage({ params }: { params: Promise<{ id: string }> }
     }
   }
 
-  async function handleConfirmResult() {
+  async function handleConfirmResult(isForceClose = false) {
     if (!session?.candidates) return;
+    if (isForceClose && !window.confirm("아직 전원이 투표하지 않았어요. 그룹장 권한으로 지금 결과를 확정할까요?")) {
+      return;
+    }
     setClosing(true);
     try {
       const tally = new Map<string, number>();
@@ -110,6 +115,7 @@ export default function VotePage({ params }: { params: Promise<{ id: string }> }
   }
 
   const allVoted = memberCount > 0 && votes.length >= memberCount;
+  const isOwner = user != null && group != null && user.id === group.owner_id;
   const primaryCandidates = session.candidates.slice(0, 3);
   const moreCandidates = session.candidates.slice(3);
 
@@ -188,8 +194,16 @@ export default function VotePage({ params }: { params: Promise<{ id: string }> }
       </div>
 
       {allVoted ? (
-        <button className="btn btn-primary mt-6" onClick={handleConfirmResult} disabled={closing}>
+        <button className="btn btn-primary mt-6" onClick={() => handleConfirmResult(false)} disabled={closing}>
           {closing ? "확정하는 중..." : "결과 확인하기"}
+        </button>
+      ) : isOwner ? (
+        <button
+          className="btn btn-secondary mt-6"
+          onClick={() => handleConfirmResult(true)}
+          disabled={closing}
+        >
+          {closing ? "확정하는 중..." : "그룹장 권한으로 지금 종료하기"}
         </button>
       ) : null}
     </main>

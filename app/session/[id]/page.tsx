@@ -5,14 +5,17 @@ import { useRouter } from "next/navigation";
 import {
   getCurrentUser,
   getSession,
+  getGroup,
   getGroupMembers,
   getPreferences,
   submitPreference,
   setSessionCandidates,
+  updateSessionLocation,
 } from "@/lib/db";
 import { trackEvent } from "@/lib/analytics";
-import type { SessionRow, UserRow, PreferenceRow } from "@/lib/types";
+import type { SessionRow, UserRow, PreferenceRow, GroupRow } from "@/lib/types";
 import KakaoMap from "@/components/KakaoMap";
+import LocationPicker from "@/components/LocationPicker";
 
 export default function SessionPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = usePromise(params);
@@ -20,20 +23,24 @@ export default function SessionPage({ params }: { params: Promise<{ id: string }
 
   const [user, setUser] = useState<UserRow | null | undefined>(undefined);
   const [session, setSession] = useState<SessionRow | null | undefined>(undefined);
+  const [group, setGroup] = useState<GroupRow | null>(null);
   const [memberCount, setMemberCount] = useState(0);
   const [preferences, setPreferences] = useState<PreferenceRow[]>([]);
   const [text, setText] = useState("");
   const [submitting, setSubmitting] = useState<"idle" | "submit" | "pass">("idle");
   const [findingCandidates, setFindingCandidates] = useState(false);
+  const [changingLocation, setChangingLocation] = useState(false);
 
   const refresh = useCallback(async () => {
     const s = await getSession(id);
     setSession(s);
     if (!s) return;
-    const [members, prefs] = await Promise.all([
+    const [g, members, prefs] = await Promise.all([
+      getGroup(s.group_id),
       getGroupMembers(s.group_id),
       getPreferences(id),
     ]);
+    setGroup(g);
     setMemberCount(members.length);
     setPreferences(prefs);
   }, [id]);
@@ -90,6 +97,12 @@ export default function SessionPage({ params }: { params: Promise<{ id: string }
     }
   }
 
+  async function handleChangeLocation(lat: number, lng: number) {
+    await updateSessionLocation(id, lat, lng);
+    setChangingLocation(false);
+    await refresh();
+  }
+
   async function handleFindCandidates() {
     if (!session) return;
     setFindingCandidates(true);
@@ -125,6 +138,9 @@ export default function SessionPage({ params }: { params: Promise<{ id: string }
 
   const doneCount = preferences.length;
   const allDone = memberCount > 0 && doneCount >= memberCount;
+  const locationPolicy = group?.location_policy ?? "anyone";
+  const canChangeLocation =
+    group != null && (locationPolicy === "anyone" || user?.id === group.owner_id);
 
   if (findingCandidates) {
     return (
@@ -142,15 +158,29 @@ export default function SessionPage({ params }: { params: Promise<{ id: string }
       <h1 className="text-2xl font-bold tracking-[-0.02em] text-text">오늘 뭐 땡겨요?</h1>
 
       <div className="card mt-4 flex flex-col gap-2 p-4">
-        <span className="text-[13px] font-medium text-text-muted">
-          이 위치 기준 {(session.radius_m / 1000).toFixed(0)}km 이내
-        </span>
-        <KakaoMap
-          lat={session.center_lat}
-          lng={session.center_lng}
-          radiusM={session.radius_m}
-          className="h-40 w-full"
-        />
+        <div className="flex items-center justify-between">
+          <span className="text-[13px] font-medium text-text-muted">
+            이 위치 기준 {(session.radius_m / 1000).toFixed(0)}km 이내
+          </span>
+          {canChangeLocation && !changingLocation ? (
+            <button
+              onClick={() => setChangingLocation(true)}
+              className="text-xs text-accent underline underline-offset-2"
+            >
+              위치 변경
+            </button>
+          ) : null}
+        </div>
+        {changingLocation ? (
+          <LocationPicker onConfirm={handleChangeLocation} confirming={false} />
+        ) : (
+          <KakaoMap
+            lat={session.center_lat}
+            lng={session.center_lng}
+            radiusM={session.radius_m}
+            className="h-40 w-full"
+          />
+        )}
       </div>
 
       <div className="mt-4 flex items-center gap-2">

@@ -10,12 +10,15 @@ export type UserRow = {
 
 export type GroupType = "couple" | "team" | "friends" | string;
 
+export type LocationPolicy = "anyone" | "leader_only";
+
 export type GroupRow = {
   id: string;
   name: string;
   type: GroupType;
   owner_id: string;
   invite_token: string;
+  location_policy: LocationPolicy;
   created_at: string;
 };
 
