@@ -1,0 +1,1642 @@
+[
+  {
+    "id": "05138a07-f40f-4f91-b393-c86a5876c920",
+    "group_id": "aee62279-f72e-466a-9c65-1fade55d4615",
+    "center_lat": 37.1086825222109,
+    "center_lng": 127.072055608043,
+    "radius_m": 3000,
+    "status": "voting",
+    "candidates": [
+      {
+        "lat": 37.1074772785299,
+        "lng": 127.072518537577,
+        "url": "http://place.map.kakao.com/585351737",
+        "name": "가장한식부페",
+        "rating": 4.7,
+        "address": "경기 평택시 진위면 견산리 441-23",
+        "category": "한식"
+      },
+      {
+        "lat": 37.1073766394845,
+        "lng": 127.073526470202,
+        "url": "http://place.map.kakao.com/1891357310",
+        "name": "99피자공장",
+        "rating": 4.7,
+        "address": "경기 평택시 진위면 견산리 426-2",
+        "category": "피자"
+      },
+      {
+        "lat": 37.10710075320676,
+        "lng": 127.0766256551009,
+        "url": "http://place.map.kakao.com/1984349639",
+        "name": "청기와병천순대사골곰탕",
+        "rating": 4.7,
+        "address": "경기 평택시 진위면 견산리 334-1",
+        "category": "순대"
+      },
+      {
+        "lat": 37.109205975832495,
+        "lng": 127.0655493203701,
+        "url": "http://place.map.kakao.com/966877705",
+        "name": "신바람만두",
+        "rating": 4.7,
+        "address": "경기 평택시 진위면 견산리 517-3",
+        "category": "분식"
+      },
+      {
+        "lat": 37.1061085604788,
+        "lng": 127.07818842382,
+        "url": "http://place.map.kakao.com/809125481",
+        "name": "싱싱해물대가앤수라면가",
+        "rating": 4.7,
+        "address": "경기 평택시 진위면 견산리 325-1",
+        "category": "해물,생선"
+      },
+      {
+        "lat": 37.10741270999288,
+        "lng": 127.07348150377312,
+        "url": "http://place.map.kakao.com/1118819507",
+        "name": "포차천국 평택진위점",
+        "rating": 4.8,
+        "address": "경기 평택시 진위면 견산리 426-2",
+        "category": "포차천국"
+      },
+      {
+        "lat": 37.1076295680622,
+        "lng": 127.073962103487,
+        "url": "http://place.map.kakao.com/948123482",
+        "name": "BBQ 평택진위점",
+        "rating": 4.5,
+        "address": "경기 평택시 진위면 견산리 348-1",
+        "category": "BBQ"
+      },
+      {
+        "lat": 37.1076912825611,
+        "lng": 127.073250015366,
+        "url": "http://place.map.kakao.com/1371515748",
+        "name": "진 육전국수",
+        "rating": 4.3,
+        "address": "경기 평택시 진위면 견산리 402-3",
+        "category": "국수"
+      },
+      {
+        "lat": 37.106736291407,
+        "lng": 127.073025216241,
+        "url": "http://place.map.kakao.com/1987475045",
+        "name": "심가네황제능이백숙",
+        "rating": 4.3,
+        "address": "경기 평택시 진위면 견산리 438-3",
+        "category": "삼계탕"
+      },
+      {
+        "lat": 37.1091744230117,
+        "lng": 127.065577419641,
+        "url": "http://place.map.kakao.com/1664200402",
+        "name": "진위통족발",
+        "rating": 4.1,
+        "address": "경기 평택시 진위면 견산리 517-3",
+        "category": "족발,보쌈"
+      }
+    ],
+    "created_at": "2026-08-18T17:01:30.481+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "8d864bc9-3b13-40f9-ba69-69157f858a02",
+    "group_id": "8b59a2d0-601b-4563-9f56-522f134c01c0",
+    "center_lat": 37.4738335058321,
+    "center_lng": 126.886251531787,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-20T05:43:24.365+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "659d9b51-cd09-4546-83f3-0c53afbcfff0",
+    "group_id": "aee62279-f72e-466a-9c65-1fade55d4615",
+    "center_lat": 37.0984176111633,
+    "center_lng": 127.090104452699,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.0990361890373,
+        "lng": 127.089515733226,
+        "url": "http://place.map.kakao.com/653530590",
+        "name": "온리쿡",
+        "rating": 4.8,
+        "address": "경기 평택시 진위면 봉남리 336-3",
+        "category": "양식"
+      },
+      {
+        "lat": 37.10159359171219,
+        "lng": 127.08685711938303,
+        "url": "http://place.map.kakao.com/693648263",
+        "name": "전라도행복밥상",
+        "rating": 4.8,
+        "address": "경기 평택시 진위면 봉남리 304-5",
+        "category": "한식"
+      },
+      {
+        "lat": 37.0992692773213,
+        "lng": 127.091077385132,
+        "url": "http://place.map.kakao.com/127087115",
+        "name": "도원",
+        "rating": 4.3,
+        "address": "경기 평택시 진위면 봉남리 180-2",
+        "category": "육류,고기"
+      },
+      {
+        "lat": 37.100163416681,
+        "lng": 127.088323513922,
+        "url": "http://place.map.kakao.com/2035029672",
+        "name": "복돼지식당",
+        "rating": 4.2,
+        "address": "경기 평택시 진위면 봉남리 362-4",
+        "category": "음식점"
+      },
+      {
+        "lat": 37.09846392912493,
+        "lng": 127.09313273821793,
+        "url": "http://place.map.kakao.com/9367367",
+        "name": "진위장수촌",
+        "rating": 4.4,
+        "address": "경기 평택시 진위면 봉남리 172-1",
+        "category": "닭요리"
+      },
+      {
+        "lat": 37.09855103152301,
+        "lng": 127.09236566219509,
+        "url": "http://place.map.kakao.com/1673568139",
+        "name": "정가네",
+        "rating": 3.8,
+        "address": "경기 평택시 진위면 봉남리 147-3",
+        "category": "한식"
+      },
+      {
+        "lat": 37.0983619271688,
+        "lng": 127.086223487027,
+        "url": "http://place.map.kakao.com/581633685",
+        "name": "진위맛나라",
+        "rating": 3.6,
+        "address": "경기 평택시 진위면 봉남리 433",
+        "category": "한식"
+      },
+      {
+        "lat": 37.0995017159291,
+        "lng": 127.089944873661,
+        "url": "http://place.map.kakao.com/242953722",
+        "name": "황제찹쌀꽈배기",
+        "rating": 3.7,
+        "address": "경기 평택시 진위면 봉남리 333-14",
+        "category": "제과,베이커리"
+      },
+      {
+        "lat": 37.09841761116326,
+        "lng": 127.09010445269915,
+        "url": "http://place.map.kakao.com/445254590",
+        "name": "기린아",
+        "rating": 4.6,
+        "address": "경기 평택시 진위면 봉남리 144-1",
+        "category": "돈까스,우동"
+      },
+      {
+        "lat": 37.099522367923356,
+        "lng": 127.08884585551574,
+        "url": "http://place.map.kakao.com/1899491007",
+        "name": "마당소머리",
+        "rating": 4.9,
+        "address": "경기 평택시 진위면 봉남리 338-1",
+        "category": "국밥"
+      }
+    ],
+    "created_at": "2026-08-18T16:41:32.507+00:00",
+    "winner_restaurant": "온리쿡"
+  },
+  {
+    "id": "b3ab0e91-3525-4e56-b74b-f638c083ed4c",
+    "group_id": "8b9967c5-f0a6-4035-8fdf-f18bce182da2",
+    "center_lat": 37.5820439178713,
+    "center_lng": 127.001945009774,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-20T11:58:37.393+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "daa7ab62-2f32-42b5-901f-c2dbfef52fd7",
+    "group_id": "aee62279-f72e-466a-9c65-1fade55d4615",
+    "center_lat": 37.1455280131333,
+    "center_lng": 127.066815431787,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.1452967922483,
+        "lng": 127.067783238659,
+        "url": "http://place.map.kakao.com/800510844",
+        "name": "역전우동0410 오산역점",
+        "rating": 4.1,
+        "address": "경기 오산시 오산동 881-28",
+        "category": "역전우동0410"
+      },
+      {
+        "lat": 37.1458776083782,
+        "lng": 127.066843879357,
+        "url": "http://place.map.kakao.com/1565680801",
+        "name": "소문난타코야끼",
+        "rating": 4.8,
+        "address": "경기 오산시 오산동 603-116",
+        "category": "간식"
+      },
+      {
+        "lat": 37.145382550283884,
+        "lng": 127.06750754451066,
+        "url": "http://place.map.kakao.com/15983366",
+        "name": "오산할매김밥",
+        "rating": 4.5,
+        "address": "경기 오산시 오산동 603-33",
+        "category": "분식"
+      },
+      {
+        "lat": 37.1452424314437,
+        "lng": 127.068300962706,
+        "url": "http://place.map.kakao.com/9743244",
+        "name": "김밥매니아 역전점",
+        "rating": 4.3,
+        "address": "경기 오산시 오산동 881-3",
+        "category": "분식"
+      },
+      {
+        "lat": 37.1454436533673,
+        "lng": 127.067803630433,
+        "url": "http://place.map.kakao.com/1035110543",
+        "name": "역전 양평해장국 오산역점",
+        "rating": 4,
+        "address": "경기 오산시 오산동 881-13",
+        "category": "해장국"
+      },
+      {
+        "lat": 37.144828273375204,
+        "lng": 127.06772654124842,
+        "url": "http://place.map.kakao.com/496881774",
+        "name": "옥수옥",
+        "rating": 4.5,
+        "address": "경기 오산시 오산동 881-9",
+        "category": "해장국"
+      },
+      {
+        "lat": 37.145098578429845,
+        "lng": 127.06774929406632,
+        "url": "http://place.map.kakao.com/12612373",
+        "name": "토박이생선구이",
+        "rating": 4.3,
+        "address": "경기 오산시 오산동 881-11",
+        "category": "해물,생선"
+      },
+      {
+        "lat": 37.1454091993915,
+        "lng": 127.068176171619,
+        "url": "http://place.map.kakao.com/1316964818",
+        "name": "멕시카나치킨 오산역점",
+        "rating": 4.4,
+        "address": "경기 오산시 오산동 881-16",
+        "category": "멕시카나치킨"
+      },
+      {
+        "lat": 37.1453757947419,
+        "lng": 127.06828982668043,
+        "url": "http://place.map.kakao.com/1159541976",
+        "name": "양치기소녀 2호점",
+        "rating": 4.7,
+        "address": "경기 오산시 오산동 881-16",
+        "category": "양꼬치"
+      },
+      {
+        "lat": 37.14490306776172,
+        "lng": 127.06771535206146,
+        "url": "http://place.map.kakao.com/1939096196",
+        "name": "대풍성",
+        "rating": 4.8,
+        "address": "경기 오산시 오산동 881-9",
+        "category": "중국요리"
+      }
+    ],
+    "created_at": "2026-08-18T16:37:50.695+00:00",
+    "winner_restaurant": "소문난타코야끼"
+  },
+  {
+    "id": "7beb23a2-0c4c-4463-bde6-3f1da583fa45",
+    "group_id": "145e1aed-97bf-4862-9604-f10c49c0bd52",
+    "center_lat": 37.2144455635846,
+    "center_lng": 127.102792792548,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.215863565021586,
+        "lng": 127.10203986721419,
+        "url": "http://place.map.kakao.com/1224855303",
+        "name": "하코다테",
+        "rating": 4.2,
+        "address": "경기 화성시 동탄구 영천동 844-1",
+        "category": "일식"
+      },
+      {
+        "lat": 37.214404962623,
+        "lng": 127.102854701505,
+        "url": "http://place.map.kakao.com/1437424121",
+        "name": "모지",
+        "rating": 4.8,
+        "address": "경기 화성시 동탄구 영천동 862-3",
+        "category": "분식"
+      },
+      {
+        "lat": 37.2141309813083,
+        "lng": 127.102926432924,
+        "url": "http://place.map.kakao.com/373173286",
+        "name": "고양이라면가게",
+        "rating": 4.4,
+        "address": "경기 화성시 동탄구 영천동 862-3",
+        "category": "분식"
+      },
+      {
+        "lat": 37.21399823686553,
+        "lng": 127.10222099295785,
+        "url": "http://place.map.kakao.com/1314118480",
+        "name": "텀즈",
+        "rating": 4.6,
+        "address": "경기 화성시 동탄구 영천동 875-1",
+        "category": "치킨"
+      },
+      {
+        "lat": 37.21425077797615,
+        "lng": 127.10193404643462,
+        "url": "http://place.map.kakao.com/2095912334",
+        "name": "제주돔베옥 기흥동탄점",
+        "rating": 4.7,
+        "address": "경기 화성시 동탄구 영천동 875-1",
+        "category": "한식"
+      },
+      {
+        "lat": 37.214035411919006,
+        "lng": 127.10195178250908,
+        "url": "http://place.map.kakao.com/358810064",
+        "name": "무공돈까스 동탄스마트타워점",
+        "rating": 4.5,
+        "address": "경기 화성시 동탄구 영천동 875-1",
+        "category": "무공돈까스"
+      },
+      {
+        "lat": 37.21437819491821,
+        "lng": 127.10255047817404,
+        "url": "http://place.map.kakao.com/1868187884",
+        "name": "송사부고로케 동탄점",
+        "rating": 4.3,
+        "address": "경기 화성시 동탄구 영천동 862-3",
+        "category": "송사부수제쌀고로케"
+      },
+      {
+        "lat": 37.2144950587388,
+        "lng": 127.100768323127,
+        "url": "http://place.map.kakao.com/1936599986",
+        "name": "로하스푸드앤리빙",
+        "rating": 4.4,
+        "address": "경기 화성시 동탄구 영천동 846-2",
+        "category": "도시락"
+      },
+      {
+        "lat": 37.214438190080465,
+        "lng": 127.1008887957692,
+        "url": "http://place.map.kakao.com/1445055515",
+        "name": "달구네베이글",
+        "rating": 4.1,
+        "address": "경기 화성시 동탄구 영천동 846-2",
+        "category": "제과,베이커리"
+      },
+      {
+        "lat": 37.21579765252843,
+        "lng": 127.10219750798673,
+        "url": "http://place.map.kakao.com/207180746",
+        "name": "국밥참맛있는집 동탄영천점",
+        "rating": 4.2,
+        "address": "경기 화성시 동탄구 영천동 844-1",
+        "category": "국밥참맛있는집"
+      }
+    ],
+    "created_at": "2026-08-18T23:30:09.723+00:00",
+    "winner_restaurant": "모지"
+  },
+  {
+    "id": "7414f72f-0015-483e-b521-65be4e862f9f",
+    "group_id": "145e1aed-97bf-4862-9604-f10c49c0bd52",
+    "center_lat": 37.2027701,
+    "center_lng": 127.1314442,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-18T23:43:59.067+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "ded2cbf7-c6d9-4d9f-9110-3ce95659c9ea",
+    "group_id": "ab5be0e3-d3be-4dc8-b0e8-916ac6e88618",
+    "center_lat": 33.5068398483589,
+    "center_lng": 126.492723044936,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-19T03:39:28.268+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "23bc6246-4a27-4402-a7c3-e71c671165c7",
+    "group_id": "b88ef455-8128-48bc-a76b-f655852d7705",
+    "center_lat": 37.8836785,
+    "center_lng": 127.7501102,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.88409239608486,
+        "lng": 127.74933433465046,
+        "url": "http://place.map.kakao.com/21343718",
+        "name": "풍물옹심이칼국수 후평점",
+        "rating": 4.9,
+        "address": "강원특별자치도 춘천시 후평동 728-3",
+        "category": "칼국수"
+      },
+      {
+        "lat": 37.8831981721019,
+        "lng": 127.749554888008,
+        "url": "http://place.map.kakao.com/7967015",
+        "name": "솥뚜껑감자탕",
+        "rating": 4.6,
+        "address": "강원특별자치도 춘천시 후평동 95-5",
+        "category": "감자탕"
+      },
+      {
+        "lat": 37.8831487680294,
+        "lng": 127.751086666513,
+        "url": "http://place.map.kakao.com/1586885655",
+        "name": "골목손칼국수",
+        "rating": 4.1,
+        "address": "강원특별자치도 춘천시 후평동 95-17",
+        "category": "칼국수"
+      },
+      {
+        "lat": 37.8845057285957,
+        "lng": 127.749081622953,
+        "url": "http://place.map.kakao.com/10235315",
+        "name": "대왕감자탕",
+        "rating": 4.5,
+        "address": "강원특별자치도 춘천시 후평동 725-19",
+        "category": "감자탕"
+      },
+      {
+        "lat": 37.8842827038383,
+        "lng": 127.749584068783,
+        "url": "http://place.map.kakao.com/1474380817",
+        "name": "100세추어탕",
+        "rating": 4,
+        "address": "강원특별자치도 춘천시 후평동 728-1",
+        "category": "추어"
+      },
+      {
+        "lat": 37.88363127725073,
+        "lng": 127.74945129029679,
+        "url": "http://place.map.kakao.com/320621589",
+        "name": "한전앞집",
+        "rating": 4.8,
+        "address": "강원특별자치도 춘천시 후평동 728-8",
+        "category": "한식"
+      },
+      {
+        "lat": 37.88451954214539,
+        "lng": 127.74917611120996,
+        "url": "http://place.map.kakao.com/1828825564",
+        "name": "행복한밥집",
+        "rating": 4.6,
+        "address": "강원특별자치도 춘천시 후평동 725-19",
+        "category": "한식"
+      },
+      {
+        "lat": 37.8837689403197,
+        "lng": 127.749337877252,
+        "url": "http://place.map.kakao.com/1462623948",
+        "name": "방콕66",
+        "rating": 4.8,
+        "address": "강원특별자치도 춘천시 후평동 728-6",
+        "category": "태국음식"
+      },
+      {
+        "lat": 37.884203977313,
+        "lng": 127.749496879869,
+        "url": "http://place.map.kakao.com/720412816",
+        "name": "골목횟집 후평동직영점",
+        "rating": 4.7,
+        "address": "강원특별자치도 춘천시 후평동 728-2",
+        "category": "회"
+      },
+      {
+        "lat": 37.8837544813354,
+        "lng": 127.748778466913,
+        "url": "http://place.map.kakao.com/20226442",
+        "name": "춘천양념화로구이",
+        "rating": 4.5,
+        "address": "강원특별자치도 춘천시 후평동 725-9",
+        "category": "육류,고기"
+      }
+    ],
+    "created_at": "2026-08-18T23:49:10.675+00:00",
+    "winner_restaurant": "방콕66"
+  },
+  {
+    "id": "cc94a9b3-0a27-4638-8051-f64ca20308fe",
+    "group_id": "9943e9e4-5b36-44c6-b235-6a21056c9b61",
+    "center_lat": 37.2146536,
+    "center_lng": 127.1025651,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-19T00:04:35.586+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "41a17270-d4ad-4627-b024-31200ae0ee75",
+    "group_id": "9943e9e4-5b36-44c6-b235-6a21056c9b61",
+    "center_lat": 37.2145691897299,
+    "center_lng": 127.10245086472,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-19T00:04:45.218+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "13623ed4-2338-45c9-a0f7-f760805e787f",
+    "group_id": "9943e9e4-5b36-44c6-b235-6a21056c9b61",
+    "center_lat": 37.2145858658967,
+    "center_lng": 127.102459820848,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-19T00:09:34.556+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "42956afa-555e-4fa3-8b2b-ea7c5823c21b",
+    "group_id": "ab5be0e3-d3be-4dc8-b0e8-916ac6e88618",
+    "center_lat": 37.2148273022325,
+    "center_lng": 127.102770405463,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.215863565021586,
+        "lng": 127.10203986721419,
+        "url": "http://place.map.kakao.com/1224855303",
+        "name": "하코다테",
+        "rating": 4.2,
+        "address": "경기 화성시 동탄구 영천동 844-1",
+        "category": "일식"
+      },
+      {
+        "lat": 37.214404962623,
+        "lng": 127.102854701505,
+        "url": "http://place.map.kakao.com/1437424121",
+        "name": "모지",
+        "rating": 4.8,
+        "address": "경기 화성시 동탄구 영천동 862-3",
+        "category": "분식"
+      },
+      {
+        "lat": 37.21425077797615,
+        "lng": 127.10193404643462,
+        "url": "http://place.map.kakao.com/2095912334",
+        "name": "제주돔베옥 기흥동탄점",
+        "rating": 4.7,
+        "address": "경기 화성시 동탄구 영천동 875-1",
+        "category": "한식"
+      },
+      {
+        "lat": 37.21399823686553,
+        "lng": 127.10222099295785,
+        "url": "http://place.map.kakao.com/1314118480",
+        "name": "텀즈",
+        "rating": 4.6,
+        "address": "경기 화성시 동탄구 영천동 875-1",
+        "category": "치킨"
+      },
+      {
+        "lat": 37.214035411919006,
+        "lng": 127.10195178250908,
+        "url": "http://place.map.kakao.com/358810064",
+        "name": "무공돈까스 동탄스마트타워점",
+        "rating": 4.5,
+        "address": "경기 화성시 동탄구 영천동 875-1",
+        "category": "무공돈까스"
+      },
+      {
+        "lat": 37.2141309813083,
+        "lng": 127.102926432924,
+        "url": "http://place.map.kakao.com/373173286",
+        "name": "고양이라면가게",
+        "rating": 4.4,
+        "address": "경기 화성시 동탄구 영천동 862-3",
+        "category": "분식"
+      },
+      {
+        "lat": 37.21437819491821,
+        "lng": 127.10255047817404,
+        "url": "http://place.map.kakao.com/1868187884",
+        "name": "송사부고로케 동탄점",
+        "rating": 4.3,
+        "address": "경기 화성시 동탄구 영천동 862-3",
+        "category": "송사부수제쌀고로케"
+      },
+      {
+        "lat": 37.21579765252843,
+        "lng": 127.10219750798673,
+        "url": "http://place.map.kakao.com/207180746",
+        "name": "국밥참맛있는집 동탄영천점",
+        "rating": 4.2,
+        "address": "경기 화성시 동탄구 영천동 844-1",
+        "category": "국밥참맛있는집"
+      },
+      {
+        "lat": 37.21615095783182,
+        "lng": 127.10312859321465,
+        "url": "http://place.map.kakao.com/339561789",
+        "name": "정아부대찌개",
+        "rating": 4.1,
+        "address": "경기 화성시 동탄구 영천동 844-1",
+        "category": "찌개,전골"
+      },
+      {
+        "lat": 37.2157881449055,
+        "lng": 127.102772081287,
+        "url": "http://place.map.kakao.com/1868388918",
+        "name": "의리감자탕",
+        "rating": 4,
+        "address": "경기 화성시 동탄구 영천동 844-1",
+        "category": "감자탕"
+      }
+    ],
+    "created_at": "2026-08-19T01:29:58.502+00:00",
+    "winner_restaurant": "하코다테"
+  },
+  {
+    "id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "group_id": "ccfd349e-2a2d-473d-88d4-43fdf8a88f64",
+    "center_lat": 37.3848138297842,
+    "center_lng": 126.973752920161,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-19T04:27:48.058+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "216cbb54-5b63-4977-a8ca-d1ef1a158e32",
+    "group_id": "ab5be0e3-d3be-4dc8-b0e8-916ac6e88618",
+    "center_lat": 37.2148148,
+    "center_lng": 127.1010639,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.214438190080465,
+        "lng": 127.1008887957692,
+        "url": "http://place.map.kakao.com/1445055515",
+        "name": "달구네베이글",
+        "rating": 4.1,
+        "address": "경기 화성시 동탄구 영천동 846-2",
+        "category": "제과,베이커리"
+      },
+      {
+        "lat": 37.21425077797615,
+        "lng": 127.10193404643462,
+        "url": "http://place.map.kakao.com/2095912334",
+        "name": "제주돔베옥 기흥동탄점",
+        "rating": 4.7,
+        "address": "경기 화성시 동탄구 영천동 875-1",
+        "category": "한식"
+      },
+      {
+        "lat": 37.2144950587501,
+        "lng": 127.100768323127,
+        "url": "http://place.map.kakao.com/463415007",
+        "name": "프랭크버거 동탄영천점",
+        "rating": 4.6,
+        "address": "경기 화성시 동탄구 영천동 846-2",
+        "category": "프랭크버거"
+      },
+      {
+        "lat": 37.2145030095442,
+        "lng": 127.099891823052,
+        "url": "http://place.map.kakao.com/38315161",
+        "name": "그린밸런스",
+        "rating": 4.5,
+        "address": "경기 화성시 동탄구 영천동 846-3",
+        "category": "샐러드"
+      },
+      {
+        "lat": 37.214035411919006,
+        "lng": 127.10195178250908,
+        "url": "http://place.map.kakao.com/358810064",
+        "name": "무공돈까스 동탄스마트타워점",
+        "rating": 4.5,
+        "address": "경기 화성시 동탄구 영천동 875-1",
+        "category": "무공돈까스"
+      },
+      {
+        "lat": 37.2144950587388,
+        "lng": 127.100768323127,
+        "url": "http://place.map.kakao.com/1936599986",
+        "name": "로하스푸드앤리빙",
+        "rating": 4.4,
+        "address": "경기 화성시 동탄구 영천동 846-2",
+        "category": "도시락"
+      },
+      {
+        "lat": 37.2144950587388,
+        "lng": 127.100768323127,
+        "url": "http://place.map.kakao.com/717285125",
+        "name": "또봉이통닭 동탄영천점",
+        "rating": 4.4,
+        "address": "경기 화성시 동탄구 영천동 846-2",
+        "category": "또봉이통닭"
+      },
+      {
+        "lat": 37.2149253776437,
+        "lng": 127.100157137175,
+        "url": "http://place.map.kakao.com/164722653",
+        "name": "앨리한식부페",
+        "rating": 4.4,
+        "address": "경기 화성시 동탄구 영천동 846-1",
+        "category": "한식뷔페"
+      },
+      {
+        "lat": 37.214953287274,
+        "lng": 127.100184213119,
+        "url": "http://place.map.kakao.com/524832505",
+        "name": "호미분식",
+        "rating": 4.3,
+        "address": "경기 화성시 동탄구 영천동 846-1",
+        "category": "분식"
+      },
+      {
+        "lat": 37.21449505875008,
+        "lng": 127.1007683231274,
+        "url": "http://place.map.kakao.com/988214333",
+        "name": "초대받은날",
+        "rating": 4,
+        "address": "경기 화성시 동탄구 영천동 846-2",
+        "category": "한식뷔페"
+      }
+    ],
+    "created_at": "2026-08-19T03:40:06.688+00:00",
+    "winner_restaurant": "달구네베이글"
+  },
+  {
+    "id": "85a8974f-4ec1-4dff-beda-d8614eb54815",
+    "group_id": "8b59a2d0-601b-4563-9f56-522f134c01c0",
+    "center_lat": 37.4738335058321,
+    "center_lng": 126.886251531787,
+    "radius_m": 3000,
+    "status": "voting",
+    "candidates": [
+      {
+        "lat": 37.473913111792484,
+        "lng": 126.88531953060864,
+        "url": "http://place.map.kakao.com/1949353646",
+        "name": "오복식당진주향토음식점 가산직영점",
+        "rating": 3.8,
+        "address": "서울 금천구 가산동 345-50",
+        "category": "한식"
+      },
+      {
+        "lat": 37.473895098223,
+        "lng": 126.887198452763,
+        "url": "http://place.map.kakao.com/1730814535",
+        "name": "자연밥상",
+        "rating": 4.6,
+        "address": "서울 금천구 가산동 239-23",
+        "category": "한식"
+      },
+      {
+        "lat": 37.47388621422509,
+        "lng": 126.88545636245293,
+        "url": "http://place.map.kakao.com/1361203393",
+        "name": "장뼈국밥",
+        "rating": 4.9,
+        "address": "서울 금천구 가산동 345-50",
+        "category": "감자탕"
+      },
+      {
+        "lat": 37.4738537921789,
+        "lng": 126.885471108451,
+        "url": "http://place.map.kakao.com/18327264",
+        "name": "파챠이",
+        "rating": 4.5,
+        "address": "서울 금천구 가산동 345-50",
+        "category": "중식"
+      },
+      {
+        "lat": 37.4745439062025,
+        "lng": 126.887283396577,
+        "url": "http://place.map.kakao.com/11246299",
+        "name": "중국성",
+        "rating": 4.5,
+        "address": "서울 금천구 가산동 239-26",
+        "category": "중국요리"
+      },
+      {
+        "lat": 37.47509219662352,
+        "lng": 126.88683940922502,
+        "url": "http://place.map.kakao.com/363152533",
+        "name": "얌샘김밥 퍼블릭가산점",
+        "rating": 4.5,
+        "address": "서울 금천구 가산동 60-26",
+        "category": "얌샘김밥"
+      },
+      {
+        "lat": 37.4738898149781,
+        "lng": 126.885452965451,
+        "url": "http://place.map.kakao.com/1227351271",
+        "name": "최고당돈가스 가산디지털점",
+        "rating": 4.4,
+        "address": "서울 금천구 가산동 345-50",
+        "category": "최고당돈가스"
+      },
+      {
+        "lat": 37.47434761464414,
+        "lng": 126.88741822193573,
+        "url": "http://place.map.kakao.com/185658252",
+        "name": "언타이틀버거",
+        "rating": 4.2,
+        "address": "서울 금천구 가산동 239-1",
+        "category": "햄버거"
+      },
+      {
+        "lat": 37.4738871152409,
+        "lng": 126.885456361077,
+        "url": "http://place.map.kakao.com/1788319643",
+        "name": "쇼쿠도에이엔 식당영원",
+        "rating": 3.9,
+        "address": "서울 금천구 가산동 345-50",
+        "category": "일식"
+      },
+      {
+        "lat": 37.4735042754258,
+        "lng": 126.885548515519,
+        "url": "http://place.map.kakao.com/12845340",
+        "name": "기가인터내셔날",
+        "rating": 4,
+        "address": "서울 금천구 가산동 345-4",
+        "category": "일식집"
+      }
+    ],
+    "created_at": "2026-08-20T05:43:24.744+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "e0b799ea-09ff-42e7-86ac-2c1061317fc9",
+    "group_id": "8a61a7c9-6a7f-4f0d-9131-9ba2d833034d",
+    "center_lat": 37.2939588578001,
+    "center_lng": 126.973607841139,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-20T05:46:50.563+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "eb285cf6-8889-4413-8844-5350044f0bd1",
+    "group_id": "f49b5f18-f8f6-4acf-a188-898e35d2fd49",
+    "center_lat": 37.5883164936772,
+    "center_lng": 126.993967472845,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.5888967763951,
+        "lng": 126.994889069259,
+        "url": "http://place.map.kakao.com/1346242185",
+        "name": "밥은",
+        "rating": 4.7,
+        "address": "서울 종로구 명륜3가 1-7",
+        "category": "한식"
+      },
+      {
+        "lat": 37.5892157054396,
+        "lng": 126.994397653254,
+        "url": "http://place.map.kakao.com/18947853",
+        "name": "삼삼오오",
+        "rating": 4.5,
+        "address": "서울 종로구 명륜3가 1-1145",
+        "category": "한식"
+      },
+      {
+        "lat": 37.5889102905955,
+        "lng": 126.994873216974,
+        "url": "http://place.map.kakao.com/457545983",
+        "name": "쇼라쪼마라탕",
+        "rating": 3.7,
+        "address": "서울 종로구 명륜3가 1-7",
+        "category": "중식"
+      },
+      {
+        "lat": 37.587465984060124,
+        "lng": 126.99453138614327,
+        "url": "http://place.map.kakao.com/22480813",
+        "name": "삼성웰스토리 성균관대서울옥류천T.O",
+        "rating": 4.8,
+        "address": "서울 종로구 명륜3가 53-21",
+        "category": "구내식당"
+      },
+      {
+        "lat": 37.5887111770679,
+        "lng": 126.995009099078,
+        "url": "http://place.map.kakao.com/254189896",
+        "name": "두찜 종로혜화점",
+        "rating": 4.6,
+        "address": "서울 종로구 명륜3가 1-8",
+        "category": "두찜"
+      },
+      {
+        "lat": 37.58867784470183,
+        "lng": 126.99511326706542,
+        "url": "http://place.map.kakao.com/814692921",
+        "name": "의원상",
+        "rating": 4.3,
+        "address": "서울 종로구 명륜3가 1-9",
+        "category": "중식"
+      },
+      {
+        "lat": 37.588571530874,
+        "lng": 126.995193662696,
+        "url": "http://place.map.kakao.com/760637359",
+        "name": "홍가복",
+        "rating": 4.2,
+        "address": "서울 종로구 명륜3가 1-14",
+        "category": "중국요리"
+      },
+      {
+        "lat": 37.5885237796056,
+        "lng": 126.995226500559,
+        "url": "http://place.map.kakao.com/20946662",
+        "name": "김밥친구",
+        "rating": 4.1,
+        "address": "서울 종로구 명륜3가 1-112",
+        "category": "분식"
+      },
+      {
+        "lat": 37.5890138901209,
+        "lng": 126.994547124277,
+        "url": "http://place.map.kakao.com/667019431",
+        "name": "째즈앤라멘",
+        "rating": 3.9,
+        "address": "서울 종로구 명륜3가 1-26",
+        "category": "일본식라면"
+      },
+      {
+        "lat": 37.589103992076,
+        "lng": 126.99460599434,
+        "url": "http://place.map.kakao.com/20746047",
+        "name": "하이루",
+        "rating": 3.9,
+        "address": "서울 종로구 명륜3가 1-25",
+        "category": "돈까스,우동"
+      }
+    ],
+    "created_at": "2026-08-20T12:04:43.371+00:00",
+    "winner_restaurant": "밥은"
+  },
+  {
+    "id": "c1222ca5-eaaf-4e58-91f4-91dbb371365a",
+    "group_id": "8f9e1f0e-c8e4-462d-9625-8864cc8731ab",
+    "center_lat": 37.3896505245216,
+    "center_lng": 126.951076958083,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.3897315763434,
+        "lng": 126.950979790977,
+        "url": "http://place.map.kakao.com/1980100627",
+        "name": "더베이크 범계역점",
+        "rating": 4,
+        "address": "경기 안양시 동안구 호계동 1039-2",
+        "category": "제과,베이커리"
+      },
+      {
+        "lat": 37.3898576303688,
+        "lng": 126.950765153391,
+        "url": "http://place.map.kakao.com/1452877641",
+        "name": "핫도넛",
+        "rating": 4.2,
+        "address": "경기 안양시 동안구 호계동 1039-2",
+        "category": "도넛"
+      },
+      {
+        "lat": 37.3892099845904,
+        "lng": 126.951222915,
+        "url": "http://place.map.kakao.com/1198678378",
+        "name": "피자몰 뉴코아 평촌점",
+        "rating": 4.5,
+        "address": "경기 안양시 동안구 호계동 1039-3",
+        "category": "피자몰"
+      },
+      {
+        "lat": 37.38957106328078,
+        "lng": 126.95066483886053,
+        "url": "http://place.map.kakao.com/1457393303",
+        "name": "윌오더테이스트 롯데백화점평촌점",
+        "rating": 4.5,
+        "address": "경기 안양시 동안구 호계동 1039",
+        "category": "중국요리"
+      },
+      {
+        "lat": 37.38920908124732,
+        "lng": 126.95121726943552,
+        "url": "http://place.map.kakao.com/27003160",
+        "name": "애슐리퀸즈 뉴코아평촌점",
+        "rating": 4.2,
+        "address": "경기 안양시 동안구 호계동 1039-3",
+        "category": "애슐리"
+      },
+      {
+        "lat": 37.3892397346448,
+        "lng": 126.951262418784,
+        "url": "http://place.map.kakao.com/21335856",
+        "name": "리미니 평촌뉴코아아울렛점",
+        "rating": 4.3,
+        "address": "경기 안양시 동안구 호계동 1039-3",
+        "category": "리미니"
+      },
+      {
+        "lat": 37.38948095206899,
+        "lng": 126.95064344246586,
+        "url": "http://place.map.kakao.com/1938971291",
+        "name": "블랙마스터버거 롯데백화점평촌점",
+        "rating": 3.9,
+        "address": "경기 안양시 동안구 호계동 1039",
+        "category": "햄버거"
+      },
+      {
+        "lat": 37.38924964030915,
+        "lng": 126.95124886160679,
+        "url": "http://place.map.kakao.com/19299558",
+        "name": "로운샤브샤브 뉴코아 평촌점",
+        "rating": 4.4,
+        "address": "경기 안양시 동안구 호계동 1039-3",
+        "category": "로운샤브샤브"
+      },
+      {
+        "lat": 37.38952779440511,
+        "lng": 126.95061743936174,
+        "url": "http://place.map.kakao.com/1410865831",
+        "name": "소바공방 롯데백화점평촌점",
+        "rating": 3.7,
+        "address": "경기 안양시 동안구 호계동 1039",
+        "category": "돈까스,우동"
+      },
+      {
+        "lat": 37.389669254491594,
+        "lng": 126.95061621733771,
+        "url": "http://place.map.kakao.com/1108430418",
+        "name": "한티옥",
+        "rating": 4.9,
+        "address": "경기 안양시 동안구 호계동 1039",
+        "category": "국밥"
+      }
+    ],
+    "created_at": "2026-08-20T04:51:11.428+00:00",
+    "winner_restaurant": "더베이크 범계역점"
+  },
+  {
+    "id": "233316b3-0c21-4f3d-9513-79d8bad50d8e",
+    "group_id": "8b9967c5-f0a6-4035-8fdf-f18bce182da2",
+    "center_lat": 37.5820439178713,
+    "center_lng": 127.001945009774,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.582238538756,
+        "lng": 127.001517066287,
+        "url": "http://place.map.kakao.com/745207287",
+        "name": "한촌설렁탕 대학로점",
+        "rating": 4.3,
+        "address": "서울 종로구 명륜4가 90",
+        "category": "한촌설렁탕"
+      },
+      {
+        "lat": 37.5821331213364,
+        "lng": 127.001605370867,
+        "url": "http://place.map.kakao.com/532735100",
+        "name": "가마솥순대국밥 대학로점",
+        "rating": 4.8,
+        "address": "서울 종로구 명륜4가 92",
+        "category": "가마솥순대국밥"
+      },
+      {
+        "lat": 37.5821304013764,
+        "lng": 127.002566555447,
+        "url": "http://place.map.kakao.com/700142636",
+        "name": "쪽당",
+        "rating": 4.7,
+        "address": "서울 종로구 동숭동 1-59",
+        "category": "육류,고기"
+      },
+      {
+        "lat": 37.582516034329,
+        "lng": 127.002182772133,
+        "url": "http://place.map.kakao.com/730998955",
+        "name": "파주감악산 대학로점",
+        "rating": 3.6,
+        "address": "서울 종로구 동숭동 1-31",
+        "category": "육류,고기"
+      },
+      {
+        "lat": 37.5822916793879,
+        "lng": 127.002558636005,
+        "url": "http://place.map.kakao.com/1461358385",
+        "name": "돼봉삼겹살 대학로점",
+        "rating": 3.7,
+        "address": "서울 종로구 동숭동 1-58",
+        "category": "삼겹살"
+      },
+      {
+        "lat": 37.58226376623773,
+        "lng": 127.00154310600558,
+        "url": "http://place.map.kakao.com/608072723",
+        "name": "무교동유정낙지 대학로점",
+        "rating": 4.8,
+        "address": "서울 종로구 명륜4가 90",
+        "category": "해물,생선"
+      },
+      {
+        "lat": 37.58221321920418,
+        "lng": 127.00163922353256,
+        "url": "http://place.map.kakao.com/215290061",
+        "name": "옥이모깻잎떡볶이",
+        "rating": 4.6,
+        "address": "서울 종로구 명륜4가 91",
+        "category": "떡볶이"
+      },
+      {
+        "lat": 37.58182767327465,
+        "lng": 127.00228690825341,
+        "url": "http://place.map.kakao.com/893250808",
+        "name": "쭈부",
+        "rating": 4.5,
+        "address": "서울 종로구 동숭동 1-27",
+        "category": "해물,생선"
+      },
+      {
+        "lat": 37.5818745248602,
+        "lng": 127.002291438221,
+        "url": "http://place.map.kakao.com/8015890",
+        "name": "KFC 대학로점",
+        "rating": 4.2,
+        "address": "서울 종로구 동숭동 1-27",
+        "category": "KFC"
+      },
+      {
+        "lat": 37.58186100399316,
+        "lng": 127.00258013179848,
+        "url": "http://place.map.kakao.com/6726771",
+        "name": "슬램버거 대학로점",
+        "rating": 4.2,
+        "address": "서울 종로구 동숭동 1-60",
+        "category": "햄버거"
+      }
+    ],
+    "created_at": "2026-08-20T04:41:02.079+00:00",
+    "winner_restaurant": "가마솥순대국밥 대학로점"
+  },
+  {
+    "id": "426d2286-bb08-4972-9736-5364c560df07",
+    "group_id": "d42db786-d596-404b-98bc-1d77dcb16724",
+    "center_lat": 37.648770041314,
+    "center_lng": 127.062958717567,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.6492339604151,
+        "lng": 127.062399455524,
+        "url": "http://place.map.kakao.com/172698845",
+        "name": "포차천국 상계백병원점",
+        "rating": 3.6,
+        "address": "서울 노원구 상계동 749-8",
+        "category": "포차천국"
+      },
+      {
+        "lat": 37.64952958269982,
+        "lng": 127.06221046521772,
+        "url": "http://place.map.kakao.com/20708494",
+        "name": "맛닭꼬 상계백병원점",
+        "rating": 4.1,
+        "address": "서울 노원구 상계동 749-6",
+        "category": "맛닭꼬"
+      },
+      {
+        "lat": 37.64870536282,
+        "lng": 127.061868700468,
+        "url": "http://place.map.kakao.com/786356016",
+        "name": "노아이디어피자 노원점",
+        "rating": 3.8,
+        "address": "서울 노원구 상계동 763-6",
+        "category": "피자"
+      },
+      {
+        "lat": 37.648313276817916,
+        "lng": 127.06216979074941,
+        "url": "http://place.map.kakao.com/8331701",
+        "name": "맥도날드 중계역점",
+        "rating": 4.3,
+        "address": "서울 노원구 상계동 763-2",
+        "category": "맥도날드"
+      },
+      {
+        "lat": 37.6494069844504,
+        "lng": 127.062332743984,
+        "url": "http://place.map.kakao.com/9735661",
+        "name": "금화반점",
+        "rating": 4.1,
+        "address": "서울 노원구 상계동 749-7",
+        "category": "중국요리"
+      },
+      {
+        "lat": 37.64799787003456,
+        "lng": 127.06228850715222,
+        "url": "http://place.map.kakao.com/2102127599",
+        "name": "슈엔챠이 상계점",
+        "rating": 4.4,
+        "address": "서울 노원구 상계동 763-4",
+        "category": "중국요리"
+      },
+      {
+        "lat": 37.6484953665978,
+        "lng": 127.061996571525,
+        "url": "http://place.map.kakao.com/709257368",
+        "name": "노원돈부리",
+        "rating": 4.8,
+        "address": "서울 노원구 상계동 763-7",
+        "category": "일식"
+      },
+      {
+        "lat": 37.6494782207088,
+        "lng": 127.062221753963,
+        "url": "http://place.map.kakao.com/1844223277",
+        "name": "남촌",
+        "rating": 4.9,
+        "address": "서울 노원구 상계동 749-6",
+        "category": "한식"
+      },
+      {
+        "lat": 37.6495403610122,
+        "lng": 127.062273931152,
+        "url": "http://place.map.kakao.com/16733431",
+        "name": "전주한식",
+        "rating": 4.8,
+        "address": "서울 노원구 상계동 749-6",
+        "category": "한식"
+      },
+      {
+        "lat": 37.6485656236046,
+        "lng": 127.06203402370697,
+        "url": "http://place.map.kakao.com/21237896",
+        "name": "영성식당",
+        "rating": 4.5,
+        "address": "서울 노원구 상계동 763-7",
+        "category": "한식"
+      }
+    ],
+    "created_at": "2026-08-19T13:22:07.873+00:00",
+    "winner_restaurant": "노아이디어피자 노원점"
+  },
+  {
+    "id": "d5b3fe9c-d7d9-4357-b10f-ee14ffa98d00",
+    "group_id": "48fa7f72-c679-4e59-bbf2-606fdba7a83e",
+    "center_lat": 37.6040309286373,
+    "center_lng": 126.929282585714,
+    "radius_m": 3000,
+    "status": "collecting",
+    "candidates": null,
+    "created_at": "2026-08-20T09:05:05.059+00:00",
+    "winner_restaurant": null
+  },
+  {
+    "id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "group_id": "0ab783c3-633d-4558-b28f-55e7754b893a",
+    "center_lat": 37.5883164936772,
+    "center_lng": 126.993967472845,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.5889102905955,
+        "lng": 126.994873216974,
+        "url": "http://place.map.kakao.com/457545983",
+        "name": "쇼라쪼마라탕",
+        "rating": 3.7,
+        "address": "서울 종로구 명륜3가 1-7",
+        "category": "중식"
+      },
+      {
+        "lat": 37.588571530874,
+        "lng": 126.995193662696,
+        "url": "http://place.map.kakao.com/760637359",
+        "name": "홍가복",
+        "rating": 4.2,
+        "address": "서울 종로구 명륜3가 1-14",
+        "category": "중국요리"
+      },
+      {
+        "lat": 37.5887967717424,
+        "lng": 126.995018151269,
+        "url": "http://place.map.kakao.com/18759570",
+        "name": "저팔계식당",
+        "rating": 3.8,
+        "address": "서울 종로구 명륜3가 1-215",
+        "category": "중국요리"
+      },
+      {
+        "lat": 37.58867784470183,
+        "lng": 126.99511326706542,
+        "url": "http://place.map.kakao.com/814692921",
+        "name": "의원상",
+        "rating": 4.3,
+        "address": "서울 종로구 명륜3가 1-9",
+        "category": "중식"
+      },
+      {
+        "lat": 37.5890138901209,
+        "lng": 126.994547124277,
+        "url": "http://place.map.kakao.com/667019431",
+        "name": "째즈앤라멘",
+        "rating": 3.9,
+        "address": "서울 종로구 명륜3가 1-26",
+        "category": "일본식라면"
+      },
+      {
+        "lat": 37.589103992076,
+        "lng": 126.99460599434,
+        "url": "http://place.map.kakao.com/20746047",
+        "name": "하이루",
+        "rating": 3.9,
+        "address": "서울 종로구 명륜3가 1-25",
+        "category": "돈까스,우동"
+      },
+      {
+        "lat": 37.5888967763951,
+        "lng": 126.994889069259,
+        "url": "http://place.map.kakao.com/1346242185",
+        "name": "밥은",
+        "rating": 4.7,
+        "address": "서울 종로구 명륜3가 1-7",
+        "category": "한식"
+      },
+      {
+        "lat": 37.5892157054396,
+        "lng": 126.994397653254,
+        "url": "http://place.map.kakao.com/18947853",
+        "name": "삼삼오오",
+        "rating": 4.5,
+        "address": "서울 종로구 명륜3가 1-1145",
+        "category": "한식"
+      },
+      {
+        "lat": 37.587465984060124,
+        "lng": 126.99453138614327,
+        "url": "http://place.map.kakao.com/22480813",
+        "name": "삼성웰스토리 성균관대서울옥류천T.O",
+        "rating": 4.8,
+        "address": "서울 종로구 명륜3가 53-21",
+        "category": "구내식당"
+      },
+      {
+        "lat": 37.5887111770679,
+        "lng": 126.995009099078,
+        "url": "http://place.map.kakao.com/254189896",
+        "name": "두찜 종로혜화점",
+        "rating": 4.6,
+        "address": "서울 종로구 명륜3가 1-8",
+        "category": "두찜"
+      }
+    ],
+    "created_at": "2026-08-20T04:43:54.044+00:00",
+    "winner_restaurant": "홍가복"
+  },
+  {
+    "id": "fe2a3663-3d16-458d-ad34-982818e23e3f",
+    "group_id": "24b4fd54-9eeb-45cb-9d94-9937b8791296",
+    "center_lat": 37.4980863365301,
+    "center_lng": 127.028001406275,
+    "radius_m": 3000,
+    "status": "closed",
+    "candidates": [
+      {
+        "lat": 37.4980007956522,
+        "lng": 127.027769546798,
+        "url": "http://place.map.kakao.com/213270949",
+        "name": "포490베트남쌀국수 강남점",
+        "rating": 4.2,
+        "address": "서울 강남구 역삼동 858",
+        "category": "베트남음식"
+      },
+      {
+        "lat": 37.49815744352413,
+        "lng": 127.02830563642301,
+        "url": "http://place.map.kakao.com/846264393",
+        "name": "사이공본가 강남역점",
+        "rating": 4.8,
+        "address": "서울 강남구 역삼동 858",
+        "category": "베트남음식"
+      },
+      {
+        "lat": 37.498164651039694,
+        "lng": 127.02830790088069,
+        "url": "http://place.map.kakao.com/1300037604",
+        "name": "일월분식",
+        "rating": 4.7,
+        "address": "서울 강남구 역삼동 858",
+        "category": "분식"
+      },
+      {
+        "lat": 37.49860889761233,
+        "lng": 127.0280965949162,
+        "url": "http://place.map.kakao.com/938879095",
+        "name": "한마음식당",
+        "rating": 4.8,
+        "address": "서울 강남구 역삼동 821",
+        "category": "분식"
+      },
+      {
+        "lat": 37.49816465103256,
+        "lng": 127.02830790088052,
+        "url": "http://place.map.kakao.com/1279674605",
+        "name": "삼형제김밥 강남역점",
+        "rating": 4.5,
+        "address": "서울 강남구 역삼동 858",
+        "category": "분식"
+      },
+      {
+        "lat": 37.4978692773734,
+        "lng": 127.02764736478,
+        "url": "http://place.map.kakao.com/981668689",
+        "name": "마리김밥",
+        "rating": 4.6,
+        "address": "서울 강남구 역삼동 858",
+        "category": "분식"
+      },
+      {
+        "lat": 37.498164651574506,
+        "lng": 127.02830563914374,
+        "url": "http://place.map.kakao.com/362733883",
+        "name": "햇살나타",
+        "rating": 4.8,
+        "address": "서울 강남구 역삼동 858",
+        "category": "제과,베이커리"
+      },
+      {
+        "lat": 37.4981646510326,
+        "lng": 127.028307900881,
+        "url": "http://place.map.kakao.com/1964356897",
+        "name": "킹즈 치아바타",
+        "rating": 4.4,
+        "address": "서울 강남구 역삼동 858",
+        "category": "간식"
+      },
+      {
+        "lat": 37.4981646510326,
+        "lng": 127.028307900881,
+        "url": "http://place.map.kakao.com/2129861477",
+        "name": "마리짱분식",
+        "rating": 4.2,
+        "address": "서울 강남구 역삼동 858",
+        "category": "분식"
+      },
+      {
+        "lat": 37.49816465103256,
+        "lng": 127.02830790088052,
+        "url": "http://place.map.kakao.com/1522509062",
+        "name": "로봇김밥 신분당선강남역점",
+        "rating": 3.9,
+        "address": "서울 강남구 역삼동 858",
+        "category": "분식"
+      }
+    ],
+    "created_at": "2026-08-20T04:54:59.626+00:00",
+    "winner_restaurant": "포490베트남쌀국수 강남점"
+  },
+  {
+    "id": "28f6933d-20b7-44b4-be8f-8d5f88273072",
+    "group_id": "8c272462-dd50-41c6-8aae-87479e0cde8e",
+    "center_lat": 37.285121,
+    "center_lng": 126.986292,
+    "radius_m": 3000,
+    "status": "voting",
+    "candidates": [
+      {
+        "lat": 37.2855646874128,
+        "lng": 126.986639255043,
+        "url": "http://place.map.kakao.com/900419269",
+        "name": "쌉니다 (구)미소마트",
+        "rating": 4.8,
+        "address": "경기 수원시 팔달구 화서동 686-8",
+        "category": "한식"
+      },
+      {
+        "lat": 37.2865461940187,
+        "lng": 126.98935456865,
+        "url": "http://place.map.kakao.com/1724700996",
+        "name": "마장동정육식당",
+        "rating": 4.8,
+        "address": "경기 수원시 팔달구 화서동 681-6",
+        "category": "육류,고기"
+      },
+      {
+        "lat": 37.2868516254196,
+        "lng": 126.989126730516,
+        "url": "http://place.map.kakao.com/1266638808",
+        "name": "김영희동태찜&코다리냉면 화서점",
+        "rating": 4.7,
+        "address": "경기 수원시 팔달구 화서동 681-3",
+        "category": "해물,생선"
+      },
+      {
+        "lat": 37.2864272603388,
+        "lng": 126.98939292694,
+        "url": "http://place.map.kakao.com/953969370",
+        "name": "동래정 수원스타필드점",
+        "rating": 4.6,
+        "address": "경기 수원시 팔달구 화서동 681-7",
+        "category": "육류,고기"
+      },
+      {
+        "lat": 37.28565201162495,
+        "lng": 126.98597729106321,
+        "url": "http://place.map.kakao.com/2058917958",
+        "name": "청정수산",
+        "rating": 4.4,
+        "address": "경기 수원시 팔달구 화서동 685-6",
+        "category": "회"
+      },
+      {
+        "lat": 37.28630291962601,
+        "lng": 126.98942226434187,
+        "url": "http://place.map.kakao.com/8515775",
+        "name": "정통춘천닭갈비",
+        "rating": 4.4,
+        "address": "경기 수원시 팔달구 화서동 681-8",
+        "category": "닭요리"
+      },
+      {
+        "lat": 37.28599440903417,
+        "lng": 126.98599978124425,
+        "url": "http://place.map.kakao.com/7985099",
+        "name": "BBQ 수원꽃뫼마을점",
+        "rating": 4.3,
+        "address": "경기 수원시 팔달구 화서동 685-3",
+        "category": "BBQ"
+      },
+      {
+        "lat": 37.28618580846274,
+        "lng": 126.9896929260025,
+        "url": "http://place.map.kakao.com/21231854",
+        "name": "채상궁 수원본점",
+        "rating": 4.2,
+        "address": "경기 수원시 팔달구 화서동 680-3",
+        "category": "샤브샤브"
+      },
+      {
+        "lat": 37.2865282002356,
+        "lng": 126.98965904849118,
+        "url": "http://place.map.kakao.com/9258999",
+        "name": "떼돈벌집 수원본점",
+        "rating": 4.2,
+        "address": "경기 수원시 팔달구 화서동 679-10",
+        "category": "육류,고기"
+      },
+      {
+        "lat": 37.28575292784071,
+        "lng": 126.98597614465545,
+        "url": "http://place.map.kakao.com/547343708",
+        "name": "고칸 본점",
+        "rating": 4,
+        "address": "경기 수원시 팔달구 화서동 685-5",
+        "category": "일식"
+      }
+    ],
+    "created_at": "2026-08-20T11:03:10.088+00:00",
+    "winner_restaurant": null
+  }
+]

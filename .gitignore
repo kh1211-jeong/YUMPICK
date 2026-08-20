@@ -45,3 +45,8 @@ next-env.d.ts
 /.data/
 
 .vercel_token
+
+# raw user PII export (name/birthdate/phone) -- keep the aggregated
+# kpi_summary.json and other tables, never commit real users' personal data
+/docs/db-export/users.json
+/docs/db-export/users.csv

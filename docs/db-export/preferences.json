@@ -1,0 +1,1236 @@
+[
+  {
+    "id": "87ab5728-020d-4fc4-bad6-9d9aa69a6257",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-20T05:02:05.09+00:00"
+  },
+  {
+    "id": "ff2c89da-35f3-4788-993e-03323079f9e8",
+    "session_id": "daa7ab62-2f32-42b5-901f-c2dbfef52fd7",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "마라탕은 너무 싫고, 빵도 싫어. 일식 먹고 싶어. 신선한 초밥이 좋겠어. 면 요리도 같이 팔면 좋겠어",
+    "parsed": {
+      "like": [
+        "일식",
+        "초밥",
+        "면 요리"
+      ],
+      "mood": null,
+      "avoid": [
+        "마라탕",
+        "빵"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-18T16:38:22.977+00:00"
+  },
+  {
+    "id": "76aab50e-34c6-43f9-8c0d-6c4408111f7e",
+    "session_id": "659d9b51-cd09-4546-83f3-0c53afbcfff0",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "돈까스 먹고 싶어.",
+    "parsed": {
+      "like": [
+        "돈까스"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-18T16:41:40.824+00:00"
+  },
+  {
+    "id": "533aa265-4396-4013-84dc-e7db93c95f96",
+    "session_id": "659d9b51-cd09-4546-83f3-0c53afbcfff0",
+    "user_id": "f11bbdec-f1bc-4836-a872-780a668c013c",
+    "raw_text": "매운거 말고 다 좋아. 면 요리는 싫어",
+    "parsed": {
+      "like": [],
+      "mood": null,
+      "avoid": [
+        "매운거",
+        "면 요리"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-18T16:42:10.183+00:00"
+  },
+  {
+    "id": "77cb2175-b03d-4db9-b66c-f7854754b151",
+    "session_id": "05138a07-f40f-4f91-b393-c86a5876c920",
+    "user_id": "f11bbdec-f1bc-4836-a872-780a668c013c",
+    "raw_text": "카츠, 일식 돈까스\n마라탕이랑 중식 제외",
+    "parsed": {
+      "like": [
+        "카츠",
+        "일식 돈까스"
+      ],
+      "mood": null,
+      "avoid": [
+        "마라탕",
+        "중식"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-18T17:01:49.567+00:00"
+  },
+  {
+    "id": "e7cb9bba-b596-4dbb-9430-b5e06d830ba9",
+    "session_id": "7beb23a2-0c4c-4463-bde6-3f1da583fa45",
+    "user_id": "b657a7db-3cb4-4f7a-937d-7254c1184a11",
+    "raw_text": "파스타",
+    "parsed": {
+      "like": [
+        "파스타"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-18T23:30:20.219+00:00"
+  },
+  {
+    "id": "e706cb6a-4be8-46c8-8f0a-45c5d8f01938",
+    "session_id": "7beb23a2-0c4c-4463-bde6-3f1da583fa45",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-18T23:35:05.885+00:00"
+  },
+  {
+    "id": "07666293-3212-4fe2-a5c8-287f977a02f5",
+    "session_id": "7414f72f-0015-483e-b521-65be4e862f9f",
+    "user_id": "b657a7db-3cb4-4f7a-937d-7254c1184a11",
+    "raw_text": "바지락칼국수 맛집",
+    "parsed": {
+      "like": [
+        "바지락칼국수"
+      ],
+      "mood": "맛집",
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-18T23:44:23.137+00:00"
+  },
+  {
+    "id": "c1a3c472-791e-42e4-8a6a-e1060de40b3d",
+    "session_id": "23bc6246-4a27-4402-a7c3-e71c671165c7",
+    "user_id": "d4168bf3-453b-4da2-87b2-d511eaeaa32d",
+    "raw_text": "국물요리",
+    "parsed": {
+      "like": [
+        "국물요리"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-18T23:49:30.512+00:00"
+  },
+  {
+    "id": "681cc305-625d-42e7-8190-c598bc008c3a",
+    "session_id": "cc94a9b3-0a27-4638-8051-f64ca20308fe",
+    "user_id": "40913e98-6333-4278-8e76-0c5af4f02fbe",
+    "raw_text": "베이글 집 찾아줘 채소 많이 들어간 곳으로",
+    "parsed": {
+      "like": [
+        "베이글",
+        "채소 많이"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T00:05:12.872+00:00"
+  },
+  {
+    "id": "3709cd9e-c2a3-45f1-a25f-bf03915971c9",
+    "session_id": "41a17270-d4ad-4627-b024-31200ae0ee75",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "평양냉면 보다는 짬뽕 보다는 마라탕이 먹고 싶은데 라멘도 괜찮아. 빵은 먹기 싫어.",
+    "parsed": {
+      "like": [
+        "마라탕",
+        "라멘"
+      ],
+      "mood": null,
+      "avoid": [
+        "평양냉면",
+        "짬뽕",
+        "빵"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T00:05:15.498+00:00"
+  },
+  {
+    "id": "42e4ee87-ea8b-4050-88c1-6f4e90840bb6",
+    "session_id": "13623ed4-2338-45c9-a0f7-f760805e787f",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-19T00:09:37.168+00:00"
+  },
+  {
+    "id": "b15ac3eb-202a-4397-bb00-1b753d9803a7",
+    "session_id": "13623ed4-2338-45c9-a0f7-f760805e787f",
+    "user_id": "b76837cd-1383-4e1d-bf86-429edbdc8397",
+    "raw_text": "닭가슴살",
+    "parsed": {
+      "like": [
+        "닭가슴살"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T00:37:31.721+00:00"
+  },
+  {
+    "id": "aba67d33-63e4-4198-b201-5eacf87f3cee",
+    "session_id": "42956afa-555e-4fa3-8b2b-ea7c5823c21b",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "마라탕 말고 라멘 먹고",
+    "parsed": {
+      "like": [
+        "라멘"
+      ],
+      "mood": null,
+      "avoid": [
+        "마라탕"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T01:30:07.87+00:00"
+  },
+  {
+    "id": "2c1a47a0-f5fe-4525-aaca-07f21ebbab92",
+    "session_id": "7414f72f-0015-483e-b521-65be4e862f9f",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-19T03:13:14.093+00:00"
+  },
+  {
+    "id": "0d310177-127d-4d5e-9933-dc6038056dcf",
+    "session_id": "13623ed4-2338-45c9-a0f7-f760805e787f",
+    "user_id": "40913e98-6333-4278-8e76-0c5af4f02fbe",
+    "raw_text": "야채 많이 들어간 베이글 집 찾아줘",
+    "parsed": {
+      "like": [
+        "야채",
+        "베이글"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T03:36:40.728+00:00"
+  },
+  {
+    "id": "e18c6127-a7ae-4ce9-a33c-beb526f0f916",
+    "session_id": "ded2cbf7-c6d9-4d9f-9110-3ce95659c9ea",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "아무거나 안 매운거",
+    "parsed": {
+      "like": [],
+      "mood": null,
+      "avoid": [
+        "매운거"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T03:39:50.683+00:00"
+  },
+  {
+    "id": "a74bd59a-5a41-4993-bc92-f84996f697bb",
+    "session_id": "216cbb54-5b63-4977-a8ca-d1ef1a158e32",
+    "user_id": "40913e98-6333-4278-8e76-0c5af4f02fbe",
+    "raw_text": "베이글 맛집으로 가고 싶어, 조용한 분위기 평점은 높은 곳",
+    "parsed": {
+      "like": [
+        "베이글"
+      ],
+      "mood": "조용한 분위기",
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T03:40:34.636+00:00"
+  },
+  {
+    "id": "c04a15e2-5cf2-47bb-970c-5da202635c25",
+    "session_id": "216cbb54-5b63-4977-a8ca-d1ef1a158e32",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-19T03:41:12.526+00:00"
+  },
+  {
+    "id": "abd7aeb1-b379-460c-bc7f-358cc3ef9e66",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "raw_text": "매운 국물류",
+    "parsed": {
+      "like": [
+        "매운 국물류"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T04:28:21.872+00:00"
+  },
+  {
+    "id": "b9730d29-c971-483f-b7d8-f11858864aae",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "6b964d78-da77-4de4-b0d6-5095daa7a5d4",
+    "raw_text": "카레와 난",
+    "parsed": {
+      "like": [
+        "카레",
+        "난"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T04:29:59.509+00:00"
+  },
+  {
+    "id": "17daaeda-eba3-4e6f-809d-e24be6b1daed",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "983e3ca7-7e5c-4930-ac4e-8f854b3f9686",
+    "raw_text": "한식",
+    "parsed": {
+      "like": [
+        "한식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T04:30:31.959+00:00"
+  },
+  {
+    "id": "8d90af95-8c5d-427e-93dd-8fa06b684395",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "1cb0267b-0923-46cf-bcbe-871d4e9f9917",
+    "raw_text": "일식!!!",
+    "parsed": {
+      "like": [
+        "일식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T04:40:09.725+00:00"
+  },
+  {
+    "id": "45b1e8a5-1bdb-4cde-a7ef-9c6105ccc05f",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "0d282669-dea8-4909-aae0-0b32a1f9123b",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-19T04:44:02.242+00:00"
+  },
+  {
+    "id": "9f336a8b-9516-4b2b-8974-7cf77b14032f",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "928b9c28-c94e-4e0c-b86b-059a8e3b1591",
+    "raw_text": "한식",
+    "parsed": {
+      "like": [
+        "한식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T04:44:03.872+00:00"
+  },
+  {
+    "id": "e6ed1151-f59a-47af-8274-8eae78ead0d8",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "38f3ba03-404b-421f-a4e7-b1f12523c0d1",
+    "raw_text": "떡볶이",
+    "parsed": {
+      "like": [
+        "떡볶이"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T04:45:15.981+00:00"
+  },
+  {
+    "id": "30624976-58f2-40dd-8eb5-73f7efdb0fdd",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "dc64810f-6951-4c64-981e-5753eaf71f6c",
+    "raw_text": "일식",
+    "parsed": {
+      "like": [
+        "일식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T04:48:16.795+00:00"
+  },
+  {
+    "id": "65968358-496c-42c2-8922-065dca58afe3",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "4b46ac3f-6e43-4608-b891-3eee5e1aaae1",
+    "raw_text": "육회비빔밥",
+    "parsed": {
+      "like": [
+        "육회비빔밥"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T04:53:17.867+00:00"
+  },
+  {
+    "id": "8cf3e3e3-e194-46c7-8e3d-40a9caa93f0c",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "9df6fca8-8061-4cd6-aeaf-23d04bdbb947",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-19T04:53:27.901+00:00"
+  },
+  {
+    "id": "3ca2114c-000f-4ad6-8855-d184aa9c49eb",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "80940005-8bb9-4a15-9105-681651b57b04",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-19T05:03:29.928+00:00"
+  },
+  {
+    "id": "a3ec9dbe-6659-49d9-96a4-931fd0537b5a",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "a7fedfe0-fff7-40d9-abe4-a0e7ca623c58",
+    "raw_text": "엄청 매운 음식",
+    "parsed": {
+      "like": [
+        "매운 음식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T05:06:42.305+00:00"
+  },
+  {
+    "id": "08357843-5268-4b47-ac22-f76131dfa3f4",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "50b7cd41-3d10-41fb-8e02-df38909dc3aa",
+    "raw_text": "양식",
+    "parsed": {
+      "like": [
+        "양식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T05:11:58.4+00:00"
+  },
+  {
+    "id": "4808a429-ead0-475a-af42-5aab2b98fea6",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "ffefd0db-4149-46ce-8d63-1d51c2ad3b9d",
+    "raw_text": "닭발",
+    "parsed": {
+      "like": [
+        "닭발"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T05:32:59.691+00:00"
+  },
+  {
+    "id": "bcdd5553-0b67-4fa3-b4b2-ec9fb733a901",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "41cdf44e-49d9-4953-a242-16b6a1aa94e4",
+    "raw_text": "마라샹궈!!",
+    "parsed": {
+      "like": [
+        "마라샹궈"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T05:37:21.492+00:00"
+  },
+  {
+    "id": "29c7146f-3735-44f3-a6e7-c42db19c9c41",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "206a1613-886a-44ae-a5e1-50e8528b6f8c",
+    "raw_text": "중식",
+    "parsed": {
+      "like": [
+        "중식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T06:05:10.728+00:00"
+  },
+  {
+    "id": "141726f8-c50c-49c0-bcaf-b7605a1931ca",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "865ad171-4c03-4d86-ab66-e0ccf764f6fe",
+    "raw_text": "마라탕",
+    "parsed": {
+      "like": [
+        "마라탕"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T06:07:49.572+00:00"
+  },
+  {
+    "id": "818d420d-d3b0-4c4c-bcf7-11f34ccf4138",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "10f4fc30-b881-4d48-96a2-497319d9d923",
+    "raw_text": "한식",
+    "parsed": {
+      "like": [
+        "한식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T06:08:56.583+00:00"
+  },
+  {
+    "id": "f0b016e5-64fe-470e-a80f-59b2c70ab2c1",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "6f7c8879-5c95-480e-86bc-046bc8a2fb3e",
+    "raw_text": "돈까스",
+    "parsed": {
+      "like": [
+        "돈까스"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T06:16:05.177+00:00"
+  },
+  {
+    "id": "fba82b08-3ebd-4c3f-a312-fba86a7b3b4d",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "74967674-13b7-498c-99e1-eab92fdb5973",
+    "raw_text": "서브웨이",
+    "parsed": {
+      "like": [
+        "서브웨이"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T06:16:46.163+00:00"
+  },
+  {
+    "id": "8880fe73-7014-428a-945c-36f88ab8e5d7",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "b53d4603-1a5b-4ce2-808c-09c4c660b1aa",
+    "raw_text": "샤브샤브, 라멘, 돼지고기, 소고기, 짜장면, 샤오롱바오, 즉석쌀떡볶이",
+    "parsed": {
+      "like": [
+        "샤브샤브",
+        "라멘",
+        "돼지고기",
+        "소고기",
+        "짜장면",
+        "샤오롱바오",
+        "즉석쌀떡볶이"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T06:48:24.089+00:00"
+  },
+  {
+    "id": "bad41713-75c4-449e-9723-0d0e6a2f422a",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "174480eb-75cb-4652-b4b4-31663ef84212",
+    "raw_text": "따뜻한 한식",
+    "parsed": {
+      "like": [
+        "한식"
+      ],
+      "mood": "따뜻한",
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T06:55:28.589+00:00"
+  },
+  {
+    "id": "5eac6768-7273-415b-b51e-4ee7be508f89",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "505b7b5b-342e-4cb2-92c3-3e3e8ccf1d6f",
+    "raw_text": "초밥",
+    "parsed": {
+      "like": [
+        "초밥"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T07:08:10.649+00:00"
+  },
+  {
+    "id": "4499b138-1d8c-475e-8b39-3538fc26521d",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "a9befd57-840d-4e8b-8d76-59561e75940d",
+    "raw_text": "떡볶이",
+    "parsed": {
+      "like": [
+        "떡볶이"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T07:10:32.354+00:00"
+  },
+  {
+    "id": "77d642ca-33f9-46c0-b568-1c805ed98b25",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "ab7a40ba-7bfb-4e09-a9c5-9460d2d8fb3e",
+    "raw_text": "짜장면",
+    "parsed": {
+      "like": [
+        "짜장면"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T07:51:54.209+00:00"
+  },
+  {
+    "id": "c3de8612-ac48-4fae-a790-5b142c4839e1",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "0b96510a-8c6c-4c36-bfef-c820fc92b637",
+    "raw_text": "초밥",
+    "parsed": {
+      "like": [
+        "초밥"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T07:56:07.107+00:00"
+  },
+  {
+    "id": "47100b73-b06e-407d-b517-29d4154ed630",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "7eea7dc0-2b2d-4e5c-a869-f303b838e052",
+    "raw_text": "한식",
+    "parsed": {
+      "like": [
+        "한식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T10:05:26.751+00:00"
+  },
+  {
+    "id": "b06be88e-30bc-4db6-b9d8-da2094a2cdd8",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "30c7851c-8124-4d15-8f0a-49b59c46c3c5",
+    "raw_text": "회",
+    "parsed": {
+      "like": [
+        "회"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T11:57:05.548+00:00"
+  },
+  {
+    "id": "5d53c0fa-807b-424a-93af-55dd67422c3b",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "1afaf180-b46c-4678-bed0-0ba86df97adf",
+    "raw_text": "양꼬치",
+    "parsed": {
+      "like": [
+        "양꼬치"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T02:59:59.6+00:00"
+  },
+  {
+    "id": "c48d89ea-c5cb-4157-b394-e6e428b17e44",
+    "session_id": "233316b3-0c21-4f3d-9513-79d8bad50d8e",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "raw_text": "매운 건 말고 한식",
+    "parsed": {
+      "like": [
+        "한식"
+      ],
+      "mood": null,
+      "avoid": [
+        "매운 음식"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T04:41:20.868+00:00"
+  },
+  {
+    "id": "2bfc705d-7f92-40c1-8f5b-76eb36db52bd",
+    "session_id": "233316b3-0c21-4f3d-9513-79d8bad50d8e",
+    "user_id": "505b7b5b-342e-4cb2-92c3-3e3e8ccf1d6f",
+    "raw_text": "샤브샤브",
+    "parsed": {
+      "like": [
+        "샤브샤브"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T04:42:43.343+00:00"
+  },
+  {
+    "id": "130d4504-d36a-4dc8-aabe-9a6fa9ecd6eb",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "raw_text": "다인원 수용 가능한 한식 또는 일식",
+    "parsed": {
+      "like": [
+        "한식",
+        "일식"
+      ],
+      "mood": "다인원 수용 가능",
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T04:45:20.478+00:00"
+  },
+  {
+    "id": "a5e95710-85be-414d-9f2a-4adac33110b7",
+    "session_id": "c1222ca5-eaaf-4e58-91f4-91dbb371365a",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "raw_text": "한식 제외한 매운 것",
+    "parsed": {
+      "like": [
+        "매운 것"
+      ],
+      "mood": null,
+      "avoid": [
+        "한식"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T04:51:44.997+00:00"
+  },
+  {
+    "id": "b4d63d5b-9db1-4bdd-b578-aa20334abe65",
+    "session_id": "c1222ca5-eaaf-4e58-91f4-91dbb371365a",
+    "user_id": "fdf5320b-8276-418b-acc6-dcbd70c8fcb2",
+    "raw_text": "라멘",
+    "parsed": {
+      "like": [
+        "라멘"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T04:54:30.267+00:00"
+  },
+  {
+    "id": "8ec93354-4834-4ef3-b618-a41e855155e8",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "d90053f5-28ef-4bf6-91fe-4befaf0cabf6",
+    "raw_text": "중식",
+    "parsed": {
+      "like": [
+        "중식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T04:55:29.203+00:00"
+  },
+  {
+    "id": "70f8a7fd-377c-4aa3-b2b1-0249e6e83463",
+    "session_id": "fe2a3663-3d16-458d-ad34-982818e23e3f",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "raw_text": "국물류",
+    "parsed": {
+      "like": [
+        "국물류"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T04:55:40.514+00:00"
+  },
+  {
+    "id": "24d50083-8088-48f7-8269-ea2c3e6aabe7",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "3bb9e280-be1b-45c8-a42c-19354c0a9a58",
+    "raw_text": "연어초밥",
+    "parsed": {
+      "like": [
+        "연어초밥"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T04:55:40.736+00:00"
+  },
+  {
+    "id": "49d69424-4651-4739-87f4-45e6e2776a68",
+    "session_id": "c1222ca5-eaaf-4e58-91f4-91dbb371365a",
+    "user_id": "7fc76483-2afd-43f3-a5e7-506d1df361db",
+    "raw_text": "달달한 디저트",
+    "parsed": {
+      "like": [
+        "디저트",
+        "달달한 것"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T05:25:20.363+00:00"
+  },
+  {
+    "id": "1f45b52d-4e59-4936-b6ba-07a13c174683",
+    "session_id": "85a8974f-4ec1-4dff-beda-d8614eb54815",
+    "user_id": "4d685aee-a168-4e77-9c29-8733d7b5963d",
+    "raw_text": "시원한거더움요",
+    "parsed": {
+      "like": [
+        "시원한 음식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T05:43:34.699+00:00"
+  },
+  {
+    "id": "fa6195f3-4634-4488-a0c2-f1a094b65ef2",
+    "session_id": "e0b799ea-09ff-42e7-86ac-2c1061317fc9",
+    "user_id": "27324a9a-bbbb-484f-8b40-97b0a9964aa7",
+    "raw_text": "돈가스",
+    "parsed": {
+      "like": [
+        "돈가스"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T05:47:13.467+00:00"
+  },
+  {
+    "id": "b2a906ab-5b5e-4d68-87e5-eae762310b31",
+    "session_id": "e0b799ea-09ff-42e7-86ac-2c1061317fc9",
+    "user_id": "10f4fc30-b881-4d48-96a2-497319d9d923",
+    "raw_text": "한식",
+    "parsed": {
+      "like": [
+        "한식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T05:48:23.387+00:00"
+  },
+  {
+    "id": "3ff25f26-0b1e-499d-8b68-318f6bb8ee77",
+    "session_id": "85a8974f-4ec1-4dff-beda-d8614eb54815",
+    "user_id": "e4fc9c97-e159-42d7-82b6-aebf4f778a68",
+    "raw_text": "샐러드",
+    "parsed": {
+      "like": [
+        "샐러드"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T05:49:31.963+00:00"
+  },
+  {
+    "id": "ab458834-c8df-4b52-933a-e4f5d5b8b392",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "9383f6e0-0418-4638-a96b-900d71a3a496",
+    "raw_text": "닭갈비",
+    "parsed": {
+      "like": [
+        "닭갈비"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T12:49:54.167+00:00"
+  },
+  {
+    "id": "68117a0e-2398-4b87-91c6-18390a231f23",
+    "session_id": "85a8974f-4ec1-4dff-beda-d8614eb54815",
+    "user_id": "10f4fc30-b881-4d48-96a2-497319d9d923",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-20T05:53:05.577+00:00"
+  },
+  {
+    "id": "7081724a-caf1-435b-850d-6cfb7d916876",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "e47b2055-3d4d-42a6-a28b-b9ca30afbb9c",
+    "raw_text": "간단하게 먹을 수 있는 서양식 브런치",
+    "parsed": {
+      "like": [
+        "서양식",
+        "브런치"
+      ],
+      "mood": "가벼운 식사",
+      "avoid": [],
+      "budget": "간단하게"
+    },
+    "passed": false,
+    "created_at": "2026-08-19T13:02:25.893+00:00"
+  },
+  {
+    "id": "76e921cc-3ac9-4c73-b605-5ba784dc85ad",
+    "session_id": "426d2286-bb08-4972-9736-5364c560df07",
+    "user_id": "bf80e6f3-4411-4f41-a1b8-ef7780c31ef9",
+    "raw_text": "맥주 안주",
+    "parsed": {
+      "like": [
+        "맥주 안주"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T13:22:23.823+00:00"
+  },
+  {
+    "id": "26586097-24d0-4da4-9264-2969048ebe3c",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "668143b3-f20c-4938-a55c-aee7ad9eed3a",
+    "raw_text": "든든한 한식",
+    "parsed": {
+      "like": [
+        "한식",
+        "든든한 음식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T13:24:50.588+00:00"
+  },
+  {
+    "id": "db0a90e4-c943-49e1-b18a-8d31c2cf8b81",
+    "session_id": "e0b799ea-09ff-42e7-86ac-2c1061317fc9",
+    "user_id": "1fcb0f91-d633-4e4f-bbef-aa438da02f7b",
+    "raw_text": "연어 먹을예정",
+    "parsed": {
+      "like": [
+        "연어"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T05:53:21.745+00:00"
+  },
+  {
+    "id": "0ab91905-8bcf-4149-8d6e-5c070e1ac55a",
+    "session_id": "fe2a3663-3d16-458d-ad34-982818e23e3f",
+    "user_id": "865ad171-4c03-4d86-ab66-e0ccf764f6fe",
+    "raw_text": "크림파스타",
+    "parsed": {
+      "like": [
+        "크림파스타"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T06:01:31.153+00:00"
+  },
+  {
+    "id": "478c7d3d-5783-4103-a916-9d06c69bde4a",
+    "session_id": "d5b3fe9c-d7d9-4357-b10f-ee14ffa98d00",
+    "user_id": "004e5f96-3441-486f-a412-4152e670039d",
+    "raw_text": "한식 혹은 매운거",
+    "parsed": {
+      "like": [
+        "한식",
+        "매운거"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T09:05:27.058+00:00"
+  },
+  {
+    "id": "d621dc62-1821-430e-a15e-079e00262f84",
+    "session_id": "d5b3fe9c-d7d9-4357-b10f-ee14ffa98d00",
+    "user_id": "10f4fc30-b881-4d48-96a2-497319d9d923",
+    "raw_text": "일식",
+    "parsed": {
+      "like": [
+        "일식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T09:06:31.704+00:00"
+  },
+  {
+    "id": "f24d7314-b039-4964-9058-ff2c894dc09e",
+    "session_id": "d5b3fe9c-d7d9-4357-b10f-ee14ffa98d00",
+    "user_id": "32e525b4-7fda-4310-91f3-c8679f099b10",
+    "raw_text": "타코",
+    "parsed": {
+      "like": [
+        "타코"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T09:15:58.077+00:00"
+  },
+  {
+    "id": "45aca3df-01eb-4417-95aa-6f96100e97a9",
+    "session_id": "28f6933d-20b7-44b4-be8f-8d5f88273072",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "중식",
+    "parsed": {
+      "like": [
+        "중식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T11:03:22.885+00:00"
+  },
+  {
+    "id": "66ca0987-22db-4a64-9dd5-c990fd7d4038",
+    "session_id": "b3ab0e91-3525-4e56-b74b-f638c083ed4c",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "raw_text": "중식 제외 맵지 않은 식사",
+    "parsed": {
+      "like": [],
+      "mood": null,
+      "avoid": [
+        "중식",
+        "매운 음식"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T11:59:01.686+00:00"
+  },
+  {
+    "id": "4670df93-f449-43ad-af7c-8e8b520a7ffd",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "b5f6e87a-2439-48cc-a975-3fcaf04a5c6c",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-20T12:04:28.545+00:00"
+  },
+  {
+    "id": "1800560a-8283-46a1-8b7f-90cd14dce96c",
+    "session_id": "eb285cf6-8889-4413-8844-5350044f0bd1",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "raw_text": "맵지 않은 한식",
+    "parsed": {
+      "like": [
+        "한식"
+      ],
+      "mood": null,
+      "avoid": [
+        "매운 음식"
+      ],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T12:05:01.014+00:00"
+  },
+  {
+    "id": "c2d51104-c2ec-4e0f-a560-e8eac3d3fc19",
+    "session_id": "eb285cf6-8889-4413-8844-5350044f0bd1",
+    "user_id": "10f4fc30-b881-4d48-96a2-497319d9d923",
+    "raw_text": "마라탕",
+    "parsed": {
+      "like": [
+        "마라탕"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T12:08:27.207+00:00"
+  },
+  {
+    "id": "340c2963-e27c-40b7-afc5-7a6111fd060a",
+    "session_id": "eb285cf6-8889-4413-8844-5350044f0bd1",
+    "user_id": "9df6fca8-8061-4cd6-aeaf-23d04bdbb947",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-20T12:08:54.144+00:00"
+  },
+  {
+    "id": "3b3a5f24-1f29-431a-bf6b-74a6a8a06eee",
+    "session_id": "eb285cf6-8889-4413-8844-5350044f0bd1",
+    "user_id": "b5f6e87a-2439-48cc-a975-3fcaf04a5c6c",
+    "raw_text": "한식",
+    "parsed": {
+      "like": [
+        "한식"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-20T12:09:02.993+00:00"
+  },
+  {
+    "id": "a14a5f87-7502-4581-903c-ad8733e51132",
+    "session_id": "12cd47ab-5bba-4a3b-80d2-603e7091abad",
+    "user_id": "c94e2878-f051-4673-aaea-759c19ff60b7",
+    "raw_text": "짜장면",
+    "parsed": {
+      "like": [
+        "짜장면"
+      ],
+      "mood": null,
+      "avoid": [],
+      "budget": null
+    },
+    "passed": false,
+    "created_at": "2026-08-19T14:14:38.345+00:00"
+  },
+  {
+    "id": "4a689ab4-ef03-4b84-9ed8-f663ec378f91",
+    "session_id": "05138a07-f40f-4f91-b393-c86a5876c920",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "raw_text": "",
+    "parsed": null,
+    "passed": true,
+    "created_at": "2026-08-19T14:15:20.859+00:00"
+  }
+]

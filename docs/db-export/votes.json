@@ -1,0 +1,247 @@
+[
+  {
+    "id": "b400b276-cff6-4273-876d-bd17f093e268",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "d3d4aa06-7379-4b1d-8c68-94c268947e81",
+    "restaurant": "홍가복",
+    "created_at": "2026-08-20T06:43:32.440135+00:00"
+  },
+  {
+    "id": "a715414d-24f6-4d7e-a4b9-e65e49fdc332",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "3614e5c8-4077-458a-90de-19578cbf07ed",
+    "restaurant": "밥은",
+    "created_at": "2026-08-20T06:43:17.723003+00:00"
+  },
+  {
+    "id": "fc7c3364-4b5c-448d-9203-fdff478e8b96",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "0f8edc2a-d72e-4e4f-956d-f33ef05fb3f1",
+    "restaurant": "하이루",
+    "created_at": "2026-08-20T06:46:01.904527+00:00"
+  },
+  {
+    "id": "4b69e1cc-badf-42d5-a461-a39c73931ce1",
+    "session_id": "fe2a3663-3d16-458d-ad34-982818e23e3f",
+    "user_id": "b53d4603-1a5b-4ce2-808c-09c4c660b1aa",
+    "restaurant": "포490베트남쌀국수 강남점",
+    "created_at": "2026-08-20T07:03:11.999137+00:00"
+  },
+  {
+    "id": "1adc24fa-835c-4a35-bbaa-1c90382c3067",
+    "session_id": "daa7ab62-2f32-42b5-901f-c2dbfef52fd7",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "restaurant": "역전우동0410 오산역점",
+    "created_at": "2026-08-18T16:39:40.119705+00:00"
+  },
+  {
+    "id": "9a9e0391-1933-4f8d-83c2-f8c4f34fac0b",
+    "session_id": "daa7ab62-2f32-42b5-901f-c2dbfef52fd7",
+    "user_id": "f11bbdec-f1bc-4836-a872-780a668c013c",
+    "restaurant": "소문난타코야끼",
+    "created_at": "2026-08-18T16:39:46.903151+00:00"
+  },
+  {
+    "id": "659eeeeb-05ef-444f-b9e9-9d447226d09a",
+    "session_id": "659d9b51-cd09-4546-83f3-0c53afbcfff0",
+    "user_id": "f11bbdec-f1bc-4836-a872-780a668c013c",
+    "restaurant": "전라도행복밥상",
+    "created_at": "2026-08-18T16:42:35.300385+00:00"
+  },
+  {
+    "id": "fb0fdccf-f631-4350-9b9f-34a7284907c4",
+    "session_id": "659d9b51-cd09-4546-83f3-0c53afbcfff0",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "restaurant": "온리쿡",
+    "created_at": "2026-08-18T16:42:39.252669+00:00"
+  },
+  {
+    "id": "b732412f-89f9-42f9-96c2-0a9b0031ba1d",
+    "session_id": "7beb23a2-0c4c-4463-bde6-3f1da583fa45",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "restaurant": "모지",
+    "created_at": "2026-08-18T23:35:20.358017+00:00"
+  },
+  {
+    "id": "daacbec8-f7be-4dce-9b2f-d600c5ad1c4b",
+    "session_id": "7beb23a2-0c4c-4463-bde6-3f1da583fa45",
+    "user_id": "b657a7db-3cb4-4f7a-937d-7254c1184a11",
+    "restaurant": "모지",
+    "created_at": "2026-08-18T23:36:58.286816+00:00"
+  },
+  {
+    "id": "7f9287b5-ec04-4c09-af64-aa92c2b3e5e9",
+    "session_id": "23bc6246-4a27-4402-a7c3-e71c671165c7",
+    "user_id": "d4168bf3-453b-4da2-87b2-d511eaeaa32d",
+    "restaurant": "방콕66",
+    "created_at": "2026-08-18T23:49:46.202172+00:00"
+  },
+  {
+    "id": "e454e396-8026-415b-a957-ba309a4169b2",
+    "session_id": "42956afa-555e-4fa3-8b2b-ea7c5823c21b",
+    "user_id": "40913e98-6333-4278-8e76-0c5af4f02fbe",
+    "restaurant": "모지",
+    "created_at": "2026-08-19T03:38:36.903363+00:00"
+  },
+  {
+    "id": "4e94c992-d3a4-4a18-b632-855ac1489520",
+    "session_id": "42956afa-555e-4fa3-8b2b-ea7c5823c21b",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "restaurant": "하코다테",
+    "created_at": "2026-08-19T03:38:44.528711+00:00"
+  },
+  {
+    "id": "3411c152-e300-4f10-b0f9-d3d69f2454e5",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "3dced354-3ae3-4fbd-9596-0fad588d654e",
+    "restaurant": "홍가복",
+    "created_at": "2026-08-20T07:13:08.206323+00:00"
+  },
+  {
+    "id": "444b65a0-6670-4fc1-950d-9e447adb381d",
+    "session_id": "fe2a3663-3d16-458d-ad34-982818e23e3f",
+    "user_id": "30c7851c-8124-4d15-8f0a-49b59c46c3c5",
+    "restaurant": "햇살나타",
+    "created_at": "2026-08-20T07:24:04.055447+00:00"
+  },
+  {
+    "id": "822ebd6e-1e82-4d53-beb4-3c44073a8652",
+    "session_id": "85a8974f-4ec1-4dff-beda-d8614eb54815",
+    "user_id": "e4fc9c97-e159-42d7-82b6-aebf4f778a68",
+    "restaurant": "자연밥상",
+    "created_at": "2026-08-20T10:09:36.372218+00:00"
+  },
+  {
+    "id": "3a760c25-795b-4f48-8c69-8dbcf22715d2",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "17eccc3d-34cb-4636-a31a-a137515f4b43",
+    "restaurant": "삼삼오오",
+    "created_at": "2026-08-20T10:24:36.757769+00:00"
+  },
+  {
+    "id": "5518dac2-696d-42e2-abfa-923782482468",
+    "session_id": "fe2a3663-3d16-458d-ad34-982818e23e3f",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "restaurant": "포490베트남쌀국수 강남점",
+    "created_at": "2026-08-20T10:40:22.240406+00:00"
+  },
+  {
+    "id": "b9a7104e-9fd2-48ba-b10e-a9d8486eebe8",
+    "session_id": "233316b3-0c21-4f3d-9513-79d8bad50d8e",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "restaurant": "가마솥순대국밥 대학로점",
+    "created_at": "2026-08-20T10:40:50.852632+00:00"
+  },
+  {
+    "id": "acc5c44d-b962-43e9-8f9b-146e1eaf437b",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "restaurant": "홍가복",
+    "created_at": "2026-08-20T10:41:13.821579+00:00"
+  },
+  {
+    "id": "d716aecc-33f1-4bc9-bcb1-9eda6769a7c1",
+    "session_id": "eb285cf6-8889-4413-8844-5350044f0bd1",
+    "user_id": "10f4fc30-b881-4d48-96a2-497319d9d923",
+    "restaurant": "쇼라쪼마라탕",
+    "created_at": "2026-08-20T12:10:57.8578+00:00"
+  },
+  {
+    "id": "ea3597c4-fdf4-4d18-92a5-9024168f9644",
+    "session_id": "426d2286-bb08-4972-9736-5364c560df07",
+    "user_id": "bf80e6f3-4411-4f41-a1b8-ef7780c31ef9",
+    "restaurant": "노아이디어피자 노원점",
+    "created_at": "2026-08-19T13:25:10.392924+00:00"
+  },
+  {
+    "id": "efa10966-812a-4987-b398-56d20f8cdca0",
+    "session_id": "eb285cf6-8889-4413-8844-5350044f0bd1",
+    "user_id": "9df6fca8-8061-4cd6-aeaf-23d04bdbb947",
+    "restaurant": "밥은",
+    "created_at": "2026-08-20T12:11:21.757424+00:00"
+  },
+  {
+    "id": "062d45f9-a222-422d-8504-d851a0cc00dc",
+    "session_id": "eb285cf6-8889-4413-8844-5350044f0bd1",
+    "user_id": "2ee16d3e-6148-4325-9e77-e5722759e50c",
+    "restaurant": "밥은",
+    "created_at": "2026-08-20T12:15:23.421061+00:00"
+  },
+  {
+    "id": "98d7230f-7154-4fd3-9fba-3783345ca534",
+    "session_id": "eb285cf6-8889-4413-8844-5350044f0bd1",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "restaurant": "밥은",
+    "created_at": "2026-08-20T12:16:20.657634+00:00"
+  },
+  {
+    "id": "fac222dd-b3e8-445c-a672-49b2d6d82f78",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "d90053f5-28ef-4bf6-91fe-4befaf0cabf6",
+    "restaurant": "홍가복",
+    "created_at": "2026-08-20T04:55:56.600538+00:00"
+  },
+  {
+    "id": "5abc33f7-55d7-4af6-b87c-36d882936e9a",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "a7fedfe0-fff7-40d9-abe4-a0e7ca623c58",
+    "restaurant": "홍가복",
+    "created_at": "2026-08-20T04:56:53.845506+00:00"
+  },
+  {
+    "id": "9e49a755-171b-455b-9899-ce9fab600330",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "3bb9e280-be1b-45c8-a42c-19354c0a9a58",
+    "restaurant": "홍가복",
+    "created_at": "2026-08-20T04:57:02.206283+00:00"
+  },
+  {
+    "id": "485da96b-c337-4266-8b43-84ec84dd2d14",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "5bbed151-0cbd-40fb-be8f-d75dd3382314",
+    "restaurant": "홍가복",
+    "created_at": "2026-08-20T04:58:59.031686+00:00"
+  },
+  {
+    "id": "ae11688b-2576-4424-a248-0014d3a3c9f8",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "dc64810f-6951-4c64-981e-5753eaf71f6c",
+    "restaurant": "쇼라쪼마라탕",
+    "created_at": "2026-08-20T04:59:24.527272+00:00"
+  },
+  {
+    "id": "88c79972-f164-4cfc-b934-e70ab0bc5676",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "cad68317-703e-4ccd-89a2-f91bea14f2bc",
+    "restaurant": "홍가복",
+    "created_at": "2026-08-20T05:02:31.38005+00:00"
+  },
+  {
+    "id": "b170e0ab-11c6-4f27-a72c-4c3bed8130c3",
+    "session_id": "233316b3-0c21-4f3d-9513-79d8bad50d8e",
+    "user_id": "fc518e9e-a90c-4870-8303-1efd602d5036",
+    "restaurant": "가마솥순대국밥 대학로점",
+    "created_at": "2026-08-20T05:04:00.586207+00:00"
+  },
+  {
+    "id": "df14c2cc-6cae-49f7-8859-92061bc1172a",
+    "session_id": "8dd470a1-6da0-497a-bb84-8f9491cdc884",
+    "user_id": "ae8a79e7-3f8a-4921-a9c6-8ef577ee6a4f",
+    "restaurant": "쇼라쪼마라탕",
+    "created_at": "2026-08-20T05:22:36.823252+00:00"
+  },
+  {
+    "id": "f74eca9c-7c55-462c-8174-a01765534e39",
+    "session_id": "c1222ca5-eaaf-4e58-91f4-91dbb371365a",
+    "user_id": "c6da0ea9-7176-4d64-bbf5-61bba27fb3b2",
+    "restaurant": "더베이크 범계역점",
+    "created_at": "2026-08-20T05:48:46.43199+00:00"
+  },
+  {
+    "id": "8baf3d2a-3a74-4d51-a89c-ebca38b112f2",
+    "session_id": "fe2a3663-3d16-458d-ad34-982818e23e3f",
+    "user_id": "865ad171-4c03-4d86-ab66-e0ccf764f6fe",
+    "restaurant": "일월분식",
+    "created_at": "2026-08-20T06:10:10.685264+00:00"
+  }
+]

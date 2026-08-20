@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-08-20T12:46:01.905210+00:00",
+  "totals": {
+    "users": 70,
+    "groups": 18,
+    "group_members": 97,
+    "sessions": 25,
+    "preferences": 80,
+    "votes": 35,
+    "sessions_closed": 12,
+    "sessions_with_candidates": 15
+  },
+  "kpi": {
+    "prompt_participation_rate": 0.5497,
+    "session_completion_rate": 0.8,
+    "avg_decision_minutes": 115.82,
+    "tie_break_sessions": 3
+  },
+  "daily_signups": {
+    "2026-08-18": 5,
+    "2026-08-19": 43,
+    "2026-08-20": 22
+  },
+  "group_type_counts": {
+    "team": 4,
+    "family": 1,
+    "friends": 11,
+    "company": 2
+  }
+}
